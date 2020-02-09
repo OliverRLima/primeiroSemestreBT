@@ -1,0 +1,80 @@
+create database Filme; -- 1)
+
+use filme; -- 2)
+
+create table Filme (          -- 3)
+  idFilme int primary key,
+  titulo varchar(40),
+  genero varchar(40),
+  diretor varchar(40)
+  );
+  
+select*from filme;   -- 4)
+
+insert into filme values 
+( 1, 'Vingadores Ultimato', 'Fantasia/Filme de ficção científica', 'Joe e Anthony Russo');   -- 5)
+select idFilme, titulo, genero, diretor from filme ;
+
+insert into filme (idFilme, titulo) values   -- 6)
+(2,'Vingadores guerra infinita');
+
+insert into Filme (titulo, idFilme) values  -- 7)
+('Vingadores Era de Ultron',3);
+
+insert into Filme (idFilme, titulo) values   -- 8)
+(4,'vingadores'),
+(5,'Pantera negra'),
+(6,'Homem de ferro'),
+(7,'Doutor estranho'),
+(8,'Capitã Marvel'),
+(9,'Homem formiga'),
+(10,'Homem aranha: de volta ao lar'),
+(11,'Capitão américa: o primeiro vingador');
+
+update filme set diretor ='Ryan Coogler' where idfilme = 5; -- 9)
+
+update filme set diretor ='Jon Favreau' where idFilme = 6;  -- 10)
+update filme set diretor ='Joe Johnston' where idfilme = 11;
+
+update filme set genero ='Fantasia/Filme de ficção científica', diretor ='Joss Whedon' where idfilme = 4;  -- 11)
+update filme set genero ='Suspense/Filme de ficção científica', diretor = 'Peyton Reed' where idfilme = 9;
+
+update filme set genero ='Fantasia/Filme de ficção científica' where idfilme = 5; -- 12)
+update filme set genero ='Filme de ficção científica/Thriller' where idfilme = 6;
+
+select*from filme; -- 13)
+
+update filme set genero ='Fantasia/Filme de ficção científica' where idfilme = 2; -- 14)
+update filme set genero ='Filme de ficção científica/Thriller' where idfilme = 11;
+
+update filme set diretor ='Joe e Anthony Russo' where idfilme = 2;  -- 15)
+
+update filme set genero ='Filme de ficção científica/Ação', diretor='Joss Whedon' where idfilme = 3;  -- 16)
+
+update filme set genero ='Fantasia/Filme de ficção científica', diretor='Scott Derrickson' where idfilme = 7; -- 17)
+
+update filme set genero ='Fantasia/Filme de ficção científica', diretor='Anna Boden, Ryan Fleck' where idfilme = 8; -- 18)
+
+update filme set genero ='Fantasia/Filme de ficção científica' where idfilme = 10; -- 19)
+
+select * from filme; -- 20)
+
+delete from filme where idfilme = 6; -- 21)
+
+delete from filme where idfilme = 11 and 5; -- 22)
+
+alter table filme add ano int(11); -- 23)
+
+select*from filme; -- 24)
+
+alter table filme modify titulo varchar(50); -- 25)
+
+describe filme; -- 26)
+
+alter table filme drop column ano; -- 27)
+
+select * from filme order by titulo; -- 28)
+
+select * from filme order by diretor;  -- 29)
+
+select * from filme order by diretor and titulo desc; -- 30)

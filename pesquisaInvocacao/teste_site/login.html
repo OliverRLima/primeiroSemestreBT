@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./template.css">
+</head>
+<body> 
+        <div class="imagem">
+        <!-- div direcionada para a formatação da barra superior -->
+        <div class="barra_superior">
+            <span class="home"><a href="./home.html"><img class="logo" src="./logo.png" alt="Image"> </a></span>  
+        </div>
+         
+        <div class="conteudo">
+            <div class="login_caixa_meio tipo_caixa_meio">
+                
+                <h1>Login</h1>
+
+                <div class="email">
+                    Email <input type="email" required="required" placeholder="exemplo@email.com" id="email">
+                </div>
+
+                <div class="senha">
+                    Senha <input type="password" required="required" placeholder="*********" id="senha">
+                </div>
+
+                <div class="recuperar_senha"><a href="">Esqueci minha senha</a></div>
+                
+                <div class="logar tipo_botao"><a href="" id="loginho" onclick="logando()">Login</a> </div> 
+                <div class="login_ir_para_cadastro tipo_botao"><a href="./cadastro.html">Cadastrar</a> </div>
+            </div>
+        </div>
+        
+        <!-- div direcionada para a formatação da barra inferior / coloca negosso de contato e pans -->
+        <div class=barra_inferior> 
+            <span class="telefone">telefone (99) 9 9999-9999</span>
+            <span class="email">email de contato email@email.com</span>  
+        </div>
+
+    </div>
+</div>
+</body>
+</html>
+
+<script>
+    
+    function logando(){
+        
+        if(email.value == 'exemplo@gmail.com' || email.value == 'outro_exemplo@hotmail.com' || email.value == 'mais_um_exemplo@outlook.com'){
+            
+                if(senha.value == '12345678'){
+                    loginho.href = './home_cadastrados.html';                   
+                } else {
+                    alert('senha inválida');
+                }
+
+        } else {
+            alert('email inválido');
+        }
+    }
+
+</script>

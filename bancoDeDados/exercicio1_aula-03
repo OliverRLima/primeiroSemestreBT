@@ -1,0 +1,91 @@
+use exercicio;
+
+create table musica (
+   
+  idmusica int primary key,
+   
+  titulo varchar(40),
+   
+  artista varchar(40),
+   
+  genero varchar(40)
+
+);
+
+
+insert into musica values
+
+(01, 'Black', 'Pearl Jam', 'grunge'),
+
+(02, 'Last Kiss', 'Pearl Jam', 'grunge'),
+
+(03, 'Come as you are', 'Nirvana', 'grunge'),
+
+(04, 'Smells like a teen spirit', 'Nirvana', 'grunge'),
+
+(05, 'B.Y.O.B', 'System of a Down', 'heavy metal'),
+
+(06, 'November rain', 'Guns N roses', 'rock'),
+
+(07, 'My girl', 'The temptations', 'Soul');
+
+
+
+select*from musica; -- a)
+ 
+
+
+select titulo, artista from musica;  -- b)
+
+
+
+select * from musica where genero = 'grunge';  -- c)
+
+
+
+select * from musica where artista = 'Pearl Jam';  -- d)
+
+
+
+select * from musica order by titulo; -- e)
+
+
+
+select * from musica order by artista asc; -- f)
+
+
+
+select * from musica where titulo like 'b%'; -- g)
+
+
+
+select * from musica where artista like '%a'; -- h)
+
+
+
+select * from musica where genero like '_o%'; -- i)
+
+
+
+select * from musica where titulo like '%i_'; -- j)
+
+
+
+update musica set genero = 'Hard rock' where idmusica = 5; -- k)
+
+
+
+alter table musica modify titulo varchar(50); -- l)
+
+
+
+delete from musica where idmusica = 7;  -- m)
+select*from musica;                     -- m)
+
+
+
+drop table musica;  -- n)
+
+
+
+ 

@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./template.css">
+
+</head>
+
+<body> 
+
+    <div class="imagem">
+
+        <!-- div direcionada para a formatação da barra superior -->
+
+        <div class="barra_superior">
+
+            <div class="home"><a href="./home_cadastrados.html"><img class="logo" src="./logo.png" alt="Image"> </a></div> 
+            
+            <div class="cadastrado_calculadora tipo_botao">
+
+                <span onclick="calculadora()">Calculadoras</span>
+
+            </div>
+
+            <div class="cadastrado_matematica tipo_botao">
+
+                <span onclick="matematica()">Matemática</span> 
+
+            </div>
+            
+            <div class="cadastrado_fisica tipo_botao">
+
+                <span onclick="fisica()">Física</span> 
+
+            </div>
+
+            <div class="cadastrado_quimica tipo_botao">
+
+                <span onclick="quimica()">Química</span> 
+
+            </div>
+
+            <div class="cadastro tipo_botao"><a href="./login.html">Logout</a></div> 
+
+        </div>
+         
+        <div class="conteudo">
+
+            <div id="caixa1" class="home_caixa_meio tipo_caixa_meio" style="display: block;">
+
+               <div class="home_logo"><img class="home_logo"src="./logo.png" alt="logo da página"></div>
+
+               <h1>Um site para todos os cálculos</h1>
+               <h3>Use a barra superior e comece a calcular</h3>
+            
+            </div>
+            
+            
+            <div id="caixa2" class="home_cadastrado_tipo_caixa tipo_caixa_meio" style="display: none;">
+                
+                <h1>Bem vindo ao modo calculadora</h1>
+
+                <h2 onmouseover="usar()" onmouseout="desusar()" style="margin-left: 10px; width: 150px">Modo de uso</h2> 
+                
+                <div id="home_caixa_normal_texto" style="display:none">
+                
+                    <div class="home_calculadora_normal_uso" style="display: block;">
+                            
+                        <p style="margin-left:10px;">
+                            Bem vindo a calculadora da Easymath. Este modelo compreende 
+                            as quatro operações fundamenais, potência, raizes, porcentagem e regra de três, funcionando da seguinte forma:
+                            
+                            <ol>
+                                
+                                <li> Clique no modo que irá usar</li>
+                                <li>Preencha os campos (selecione se for as operações fundamentais)</li>
+                                <li> Digite os números nas caixas </li>
+                                <li> Clique em calcular </li>
+    
+                            </ol> 
+                            <ul>
+                                <li> Recomeda-se inserir somente números nos espaços </li>
+                                <li> Há de nenhuma até seis casas decimais, não sendo obrigatórias; caso não seja especificado, será sem casas decimais</li>
+
+                            </ul>
+    
+                        </p>
+                    </div>                
+                </div>
+
+                <div>        
+                    <span onclick="calcular()" class="cadastrado_escolha" style="background-color: black; color: white;margin-left: 50px">Calculadora</span>
+                    <span onclick="potencia()" class="cadastrado_escolha" style="background-color: red;">Potência</span>
+                    <span onclick="raiz()" class="cadastrado_escolha" style="background-color: blue;">Raizes</span>
+                    <span onclick="porcentagem()" class="cadastrado_escolha" style="background-color: green;">Porcentagem</span>
+                    <span onclick="regra_de_tres()" class="cadastrado_escolha" style="background-color: purple;">Regra de três</span>
+                </div>
+
+                <div style="margin-top: 100px;">
+                
+                    <span>Escolha que tipo de operador deseja usar</span>
+
+                    <select name="" id="home_operador">
+
+                        <option value="somar">Adição</option>
+                        <option value="subtrair">Subtração</option>
+                        <option value="multiplicar">Multiplicação</option>
+                        <option value="dividir">Divisão</option>
+
+                    </select>
+
+                    <span>Escolha quantos números usara</span> 
+
+                    <select name="" id="home_numero_caixas">
+
+                        <option value="2">Dois</option>
+                        <option value="3">Três</option>
+                        <option value="4">Quatro</option>
+                        <option value="5">Cinco</option>
+
+                    </select>
+                    
+                    <span>Insina quantos números decimais irá mostrar</span>
+
+                    <input type="number" id="decimal" placeholder="">
+                    
+                    <button onclick="escolher()">Escolher</button>
+
+                    <button id="calculando" onclick="falso()">Calcular</button>
+                    
+                    <div id="resultado">
+
+                    </div>
+                
+                </div>
+            </div>
+                        
+            <div id="caixa3" class="home_cadastrado_tipo_caixa tipo_caixa_meio" style="display: none; ">
+                
+                <h1>Matemática</h1>
+
+                <h2>Modo de uso</h2>
+
+                opções
+
+                potencia
+                <span>escolha o número da base</span>
+                
+                <input id="base">
+                
+                <span>escolha o número do expoente</span>
+                <input id="expoente">
+                
+                <button onclick="potencializar()">Calcular</button>
+
+
+                raizes
+                regra de tres
+                expoente
+                porcentagem
+
+            </div>
+
+            <div id="caixa4" class="home_cadastrado_tipo_caixa tipo_caixa_meio" style="display: none; ">
+                
+                    <h1>Física</h1>
+    
+                    <h2>Modo de uso</h2>
+    
+                    opções
+    
+                    potencia
+                    escolha o número da base <input id="base">
+                    escolha o número do expoente <input id="expoente">
+                    <button onclick="potencializar()">Calcular</button>
+    
+    
+                    raizes
+                    regra de tres
+                    expoente
+                    porcentagem
+    
+                </div>
+
+                <div id="caixa5" class="home_cadastrado_tipo_caixa tipo_caixa_meio" style="display: none; ">
+                
+                        <h1>Química</h1>
+        
+                        <h2>Modo de uso</h2>
+        
+                        opções
+        
+                        potencia
+                        escolha o número da base <input id="base">
+                        escolha o número do expoente <input id="expoente">
+                        <button onclick="potencializar()">Calcular</button>
+        
+        
+                        raizes
+                        regra de tres
+                        expoente
+                        porcentagem
+        
+                    </div>
+
+        </div>
+        
+        <!-- div direcionada para a formatação da barra inferior / coloca negosso de contato e pans -->
+        <div class=barra_inferior> 
+            
+            <span class="telefone">telefone (99) 9 9999-9999</span>
+            <span class="email">email de contato email@email.com</span>  
+        
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>
+<script>
+    
+    var conta_potencia = 0;
+     
+    function potencializar() {
+       
+        var valor_base = Number(base.value);
+        var valor_expoente = Number(valor_do_expoente.value);     
+        
+         if(valor_expoente > 0 ){
+            
+             conta_potencia = valor_base;
+            
+             for (var contador = 1 ; contador < valor_expoente ; contador++){
+                conta_potencia = conta_potencia * valor_base ;
+             }
+            
+        
+         } else if(valor_expoente < 0){
+            
+            conta_potencia = valor_base;
+        
+            for (var contador = -1 ; contador > valor_expoente ; contador--){
+                conta_potencia *= valor_base;
+            }
+        
+            conta_potencia = 1/conta_potencia ; 
+        
+        }else{     
+            conta_potencia = valor_base;
+        }
+        
+        alert(`${conta_potencia}`);
+    }
+    
+        function usar(){
+            home_caixa_normal_texto.style.display = 'block';
+        }
+        
+        function desusar(){
+            home_caixa_normal_texto.style.display = 'none';
+        }
+    
+        var contando = 5;
+        
+        function ver(a,b,c,d,e){
+            caixa1.style.display = a;
+            caixa2.style.display = b;
+            caixa3.style.display = c;
+            caixa4.style.display = d;
+            caixa5.style.display = e;
+        }
+    
+        function calculadora(){
+            ver('none','block','none','none','none');
+        }
+    
+        function matematica(){
+            ver('none','none','block','none','none');
+        }
+
+        function fisica(){
+            ver('none','none','none','block','none');
+        }
+
+        function quimica() { 
+            ver('none','none','none','none','block');
+        }
+    
+        function escolher(){
+        
+        var operador = home_operador.value;
+        var caixas = Number(home_numero_caixas.value);
+        var contador = 1;
+    
+        resultado.innerHTML = '';
+
+        if (operador == 'somar'){
+            
+            contando = 5;
+            
+            while (contador <= caixas){
+                
+
+                if(contador < caixas){        
+                    contador++;
+                    resultado.innerHTML += `<input id="${'caixa' + (contador + 4)}"> + `;
+                
+                    contando ++;
+                }
+
+                if(contador == caixas){
+                    
+                    resultado.innerHTML += `<input id="${'caixa' + (contador + 5)}"> = `;
+                    contador++;
+
+                    contando ++;
+                }
+            }
+
+            document.getElementById('calculando').onclick = function() {
+            
+                var Elementid = this.id;
+                Elementid == "calculando" ? calcular() : falso(); 
+
+            }
+            
+            function calcular(){
+        
+                var conta = Number(0);
+
+                if(contando == 7){
+                    conta += Number(caixa6.value);
+                    conta += Number(caixa7.value);
+
+                    if(decimal.value == 2){
+                        resultado.innerHTML += `${(conta).toFixed(2)}`;
+                    }else if(decimal.value == 3){
+                        resultado.innerHTML += `${(conta).toFixed(3)}`;
+                    } else if(decimal.value == 4){
+                        resultado.innerHTML += `${(conta).toFixed(4)}`;
+                    } else if(decimal.value == 5){
+                        resultado.innerHTML += `${(conta).toFixed(5)}`;
+                    } else if(decimal.value == 6){
+                        resultado.innerHTML += `${(conta).toFixed(6)}`;
+                    } else {
+                        resultado.innerHTML += `${conta}`;
+                    }
+                }
+
+                else if(contando == 8){
+                    conta += Number(caixa6.value);
+                    conta += Number(caixa7.value);
+                    conta += Number(caixa8.value);
+
+                    if(decimal.value == 2){
+                        resultado.innerHTML += `${(conta).toFixed(2)}`;
+                    }else if(decimal.value == 3){
+                        resultado.innerHTML += `${(conta).toFixed(3)}`;
+                    } else if(decimal.value == 4){
+                        resultado.innerHTML += `${(conta).toFixed(4)}`;
+                    } else if(decimal.value == 5){
+                        resultado.innerHTML += `${(conta).toFixed(5)}`;
+                    } else if(decimal.value == 6){
+                        resultado.innerHTML += `${(conta).toFixed(6)}`;
+                    } else {
+                        resultado.innerHTML += `${conta}`;
+                    }
+                }
+
+                else if(contando == 9){
+                    conta += Number(caixa6.value);
+                    conta += Number(caixa7.value);
+                    conta += Number(caixa8.value);
+                    conta += Number(caixa9.value);
+
+                    if(decimal.value == 2){
+                        resultado.innerHTML += `${(conta).toFixed(2)}`;
+                    }else if(decimal.value == 3){
+                        resultado.innerHTML += `${(conta).toFixed(3)}`;
+                    } else if(decimal.value == 4){
+                        resultado.innerHTML += `${(conta).toFixed(4)}`;
+                    } else if(decimal.value == 5){
+                        resultado.innerHTML += `${(conta).toFixed(5)}`;
+                    } else if(decimal.value == 6){
+                        resultado.innerHTML += `${(conta).toFixed(6)}`;
+                    } else {
+                        resultado.innerHTML += `${conta}`;
+                    }
+                }
+
+                else{
+                    conta += Number(caixa6.value);
+                    conta += Number(caixa7.value);
+                    conta += Number(caixa8.value);
+                    conta += Number(caixa9.value);
+                    conta += Number(caixa10.value);
+
+                    if(decimal.value == 2){
+                        resultado.innerHTML += `${(conta).toFixed(2)}`;
+                    }else if(decimal.value == 3){
+                        resultado.innerHTML += `${(conta).toFixed(3)}`;
+                    } else if(decimal.value == 4){
+                        resultado.innerHTML += `${(conta).toFixed(4)}`;
+                    } else if(decimal.value == 5){
+                        resultado.innerHTML += `${(conta).toFixed(5)}`;
+                    } else if(decimal.value == 6){
+                        resultado.innerHTML += `${(conta).toFixed(6)}`;
+                    } else {
+                        resultado.innerHTML += `${conta}`;
+                    }
+                }
+            }
+
+        }
+
+        if (operador == 'subtrair'){
+            
+            contando = 5;
+            
+            while (contador <= caixas){
+                
+
+                if(contador < caixas){        
+                    contador++;
+                    resultado.innerHTML += `<input id="${'caixa' + (contador + 4)}"> - `;
+                
+                    contando ++;
+                }
+
+                if(contador == caixas){
+                    
+                    resultado.innerHTML += `<input id="${'caixa' + (contador + 5)}"> = `;
+                    contador++;
+
+                    contando ++;
+                }
+            }
+
+            document.getElementById('calculando').onclick = function() {
+            
+                var Elementid = this.id;
+                Elementid == "calculando" ? calcular() : falso(); 
+
+            }
+            
+            function calcular(){
+        
+                var conta = Number(0);
+                if(contando == 7){
+                    conta += Number(caixa6.value);
+                    conta -= Number(caixa7.value);
+                    if(decimal.value == 2){
+                        resultado.innerHTML += `${(conta).toFixed(2)}`;
+                    }else if(decimal.value == 3){
+                        resultado.innerHTML += `${(conta).toFixed(3)}`;
+                    } else if(decimal.value == 4){
+                        resultado.innerHTML += `${(conta).toFixed(4)}`;
+                    } else if(decimal.value == 5){
+                        resultado.innerHTML += `${(conta).toFixed(5)}`;
+                    } else if(decimal.value == 6){
+                        resultado.innerHTML += `${(conta).toFixed(6)}`;
+                    } else {
+                        resultado.innerHTML += `${conta}`;
+                    }
+
+                }
+
+                if(contando == 8){
+                    conta += Number(caixa6.value);
+                    conta -= Number(caixa7.value);
+                    conta -= Number(caixa8.value);
+                    if(decimal.value == 2){
+                        resultado.innerHTML += `${(conta).toFixed(2)}`;
+                    }else if(decimal.value == 3){
+                        resultado.innerHTML += `${(conta).toFixed(3)}`;
+                    } else if(decimal.value == 4){
+                        resultado.innerHTML += `${(conta).toFixed(4)}`;
+                    } else if(decimal.value == 5){
+                        resultado.innerHTML += `${(conta).toFixed(5)}`;
+                    } else if(decimal.value == 6){
+                        resultado.innerHTML += `${(conta).toFixed(6)}`;
+                    } else {
+                        resultado.innerHTML += `${conta}`;
+                    }
+
+                }
+
+                if(contando == 9){
+                    conta += Number(caixa6.value);
+                    conta -= Number(caixa7.value);
+                    conta -= Number(caixa8.value);
+                    conta -= Number(caixa9.value);
+
+                    if(decimal.value == 2){
+                        resultado.innerHTML += `${(conta).toFixed(2)}`;
+                    }else if(decimal.value == 3){
+                        resultado.innerHTML += `${(conta).toFixed(3)}`;
+                    } else if(decimal.value == 4){
+                        resultado.innerHTML += `${(conta).toFixed(4)}`;
+                    } else if(decimal.value == 5){
+                        resultado.innerHTML += `${(conta).toFixed(5)}`;
+                    } else if(decimal.value == 6){
+                        resultado.innerHTML += `${(conta).toFixed(6)}`;
+                    } else {
+                        resultado.innerHTML += `${conta}`;
+                    }
+
+                }
+
+                if(contando == 10){
+                    conta += Number(caixa6.value);
+                    conta -= Number(caixa7.value);
+                    conta -= Number(caixa8.value);
+                    conta -= Number(caixa9.value);
+                    conta -= Number(caixa10.value);
+
+                    if(decimal.value == 2){
+                        resultado.innerHTML += `${(conta).toFixed(2)}`;
+                    }else if(decimal.value == 3){
+                        resultado.innerHTML += `${(conta).toFixed(3)}`;
+                    } else if(decimal.value == 4){
+                        resultado.innerHTML += `${(conta).toFixed(4)}`;
+                    } else if(decimal.value == 5){
+                        resultado.innerHTML += `${(conta).toFixed(5)}`;
+                    } else if(decimal.value == 6){
+                        resultado.innerHTML += `${(conta).toFixed(6)}`;
+                    } else {
+                        resultado.innerHTML += `${conta}`;
+                    }
+
+                }
+            }
+
+        }
+
+        if (operador == 'multiplicar'){
+            
+            contando = 5;
+            
+            while (contador <= caixas){
+                
+
+                if(contador < caixas){        
+                    contador++;
+                    resultado.innerHTML += `<input id="${'caixa' + (contador + 4)}"> x `;
+                
+                    contando ++;
+                }
+
+                if(contador == caixas){
+                    
+                    resultado.innerHTML += `<input id="${'caixa' + (contador + 5)}"> = `;
+                    contador++;
+
+                    contando ++;
+                }
+            }
+
+            document.getElementById('calculando').onclick = function() {
+            
+                var Elementid = this.id;
+                Elementid == "calculando" ? calcular() : falso(); 
+
+            }
+            
+            function calcular(){
+        
+                var conta = Number(0);
+
+                if(contando == 7){
+                    conta += Number(caixa6.value);
+                    conta *= Number(caixa7.value);
+
+                    if(decimal.value == 2){
+                        resultado.innerHTML += `${(conta).toFixed(2)}`;
+                    }else if(decimal.value == 3){
+                        resultado.innerHTML += `${(conta).toFixed(3)}`;
+                    } else if(decimal.value == 4){
+                        resultado.innerHTML += `${(conta).toFixed(4)}`;
+                    } else if(decimal.value == 5){
+                        resultado.innerHTML += `${(conta).toFixed(5)}`;
+                    } else if(decimal.value == 6){
+                        resultado.innerHTML += `${(conta).toFixed(6)}`;
+                    } else {
+                        resultado.innerHTML += `${conta}`;
+                    }
+
+                }
+
+                if(contando == 8){
+                    conta += Number(caixa6.value);
+                    conta *= Number(caixa7.value);
+                    conta *= Number(caixa8.value);
+
+                    if(decimal.value == 2){
+                        resultado.innerHTML += `${(conta).toFixed(2)}`;
+                    }else if(decimal.value == 3){
+                        resultado.innerHTML += `${(conta).toFixed(3)}`;
+                    } else if(decimal.value == 4){
+                        resultado.innerHTML += `${(conta).toFixed(4)}`;
+                    } else if(decimal.value == 5){
+                        resultado.innerHTML += `${(conta).toFixed(5)}`;
+                    } else if(decimal.value == 6){
+                        resultado.innerHTML += `${(conta).toFixed(6)}`;
+                    } else {
+                        resultado.innerHTML += `${conta}`;
+                    }
+
+                }
+
+                if(contando == 9){
+                    conta += Number(caixa6.value);
+                    conta *= Number(caixa7.value);
+                    conta *= Number(caixa8.value);
+                    conta *= Number(caixa9.value);
+
+                    if(decimal.value == 2){
+                        resultado.innerHTML += `${(conta).toFixed(2)}`;
+                    }else if(decimal.value == 3){
+                        resultado.innerHTML += `${(conta).toFixed(3)}`;
+                    } else if(decimal.value == 4){
+                        resultado.innerHTML += `${(conta).toFixed(4)}`;
+                    } else if(decimal.value == 5){
+                        resultado.innerHTML += `${(conta).toFixed(5)}`;
+                    } else if(decimal.value == 6){
+                        resultado.innerHTML += `${(conta).toFixed(6)}`;
+                    } else {
+                        resultado.innerHTML += `${conta}`;
+                    }
+
+                }
+
+                if(contando == 10){
+                    conta += Number(caixa6.value);
+                    conta *= Number(caixa7.value);
+                    conta *= Number(caixa8.value);
+                    conta *= Number(caixa9.value);
+                    conta *= Number(caixa10.value);
+
+                    if(decimal.value == 2){
+                        resultado.innerHTML += `${(conta).toFixed(2)}`;
+                    }else if(decimal.value == 3){
+                        resultado.innerHTML += `${(conta).toFixed(3)}`;
+                    } else if(decimal.value == 4){
+                        resultado.innerHTML += `${(conta).toFixed(4)}`;
+                    } else if(decimal.value == 5){
+                        resultado.innerHTML += `${(conta).toFixed(5)}`;
+                    } else if(decimal.value == 6){
+                        resultado.innerHTML += `${(conta).toFixed(6)}`;
+                    } else {
+                        resultado.innerHTML += `${conta}`;
+                    }
+
+                }
+            }
+       
+        }
+
+        if (operador == 'dividir'){
+            
+            contando = 5;
+            
+            while (contador <= caixas){
+                
+
+                if(contador < caixas){        
+                    contador++;
+                    resultado.innerHTML += `<input id="${'caixa' + (contador + 4)}"> + `;
+                
+                    contando ++;
+                }
+
+                if(contador == caixas){
+                    
+                    resultado.innerHTML += `<input id="${'caixa' + (contador + 5)}"> = `;
+                    contador++;
+
+                    contando ++;
+                }
+            }
+
+            document.getElementById('calculando').onclick = function() {
+            
+                var Elementid = this.id;
+                Elementid == "calculando" ? calcular() : falso(); 
+
+            }
+            
+            function calcular(){
+        
+                var conta = Number(0);
+                if(contando == 7){
+                    conta += Number(caixa6.value);
+                    conta += Number(caixa7.value);
+
+                    if(decimal.value == 2){
+                        resultado.innerHTML += `${(conta).toFixed(2)}`;
+                    }else if(decimal.value == 3){
+                        resultado.innerHTML += `${(conta).toFixed(3)}`;
+                    } else if(decimal.value == 4){
+                        resultado.innerHTML += `${(conta).toFixed(4)}`;
+                    } else if(decimal.value == 5){
+                        resultado.innerHTML += `${(conta).toFixed(5)}`;
+                    } else if(decimal.value == 6){
+                        resultado.innerHTML += `${(conta).toFixed(6)}`;
+                    } else {
+                        resultado.innerHTML += `${conta}`;
+                    }
+
+                }
+
+                if(contando == 8){
+                    conta += Number(caixa6.value);
+                    conta += Number(caixa7.value);
+                    conta += Number(caixa8.value);
+
+                    if(decimal.value == 2){
+                        resultado.innerHTML += `${(conta).toFixed(2)}`;
+                    }else if(decimal.value == 3){
+                        resultado.innerHTML += `${(conta).toFixed(3)}`;
+                    } else if(decimal.value == 4){
+                        resultado.innerHTML += `${(conta).toFixed(4)}`;
+                    } else if(decimal.value == 5){
+                        resultado.innerHTML += `${(conta).toFixed(5)}`;
+                    } else if(decimal.value == 6){
+                        resultado.innerHTML += `${(conta).toFixed(6)}`;
+                    } else {
+                        resultado.innerHTML += `${conta}`;
+                    }
+
+                }
+
+                if(contando == 9){
+                    conta += Number(caixa6.value);
+                    conta += Number(caixa7.value);
+                    conta += Number(caixa8.value);
+                    conta += Number(caixa9.value);
+
+                    if(decimal.value == 2){
+                        resultado.innerHTML += `${(conta).toFixed(2)}`;
+                    }else if(decimal.value == 3){
+                        resultado.innerHTML += `${(conta).toFixed(3)}`;
+                    } else if(decimal.value == 4){
+                        resultado.innerHTML += `${(conta).toFixed(4)}`;
+                    } else if(decimal.value == 5){
+                        resultado.innerHTML += `${(conta).toFixed(5)}`;
+                    } else if(decimal.value == 6){
+                        resultado.innerHTML += `${(conta).toFixed(6)}`;
+                    } else {
+                        resultado.innerHTML += `${conta}`;
+                    }
+
+                }
+
+                if(contando == 10){
+                    conta += Number(caixa6.value);
+                    conta += Number(caixa7.value);
+                    conta += Number(caixa8.value);
+                    conta += Number(caixa9.value);
+                    conta += Number(caixa10.value);
+
+                    if(decimal.value == 2){
+                        resultado.innerHTML += `${(conta).toFixed(2)}`;
+                    }else if(decimal.value == 3){
+                        resultado.innerHTML += `${(conta).toFixed(3)}`;
+                    } else if(decimal.value == 4){
+                        resultado.innerHTML += `${(conta).toFixed(4)}`;
+                    } else if(decimal.value == 5){
+                        resultado.innerHTML += `${(conta).toFixed(5)}`;
+                    } else if(decimal.value == 6){
+                        resultado.innerHTML += `${(conta).toFixed(6)}`;
+                    } else {
+                        resultado.innerHTML += `${conta}`;
+                    }
+
+                }
+            }
+        }
+    }
+</script>

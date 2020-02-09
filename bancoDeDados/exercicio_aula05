@@ -1,0 +1,153 @@
+create database futebol;
+
+use futebol;
+
+create table atleta (
+idJogador int primary key auto_increment,
+nome varchar (40),
+idade int,
+posicao varchar (40)
+);
+
+create table pais (
+idPais int primary key auto_increment,
+nome varchar(40),
+capital varchar (40)
+);
+ 
+insert into pais values
+(null,'Brasil','Brasilia'),
+(null,'Inglaterra','Londres'),
+(null,'Itália','Roma'),
+(null,'França','Paris'),
+(null,'Espanha','Madrid');
+
+alter table atleta add column fkPais int;
+
+ALTER TABLE atleta ADD CONSTRAINT fkPais
+FOREIGN KEY(fkPais) REFERENCES pais (idPais);
+
+insert into atleta values
+(null,'Heinrick',18,'goleiro',1),
+(null,'Matheus',19,'Centro-avante',2),
+(null,'Vieira',20,'Zagueiro',3),
+(null,'VG',18,'Lateral',4),
+(null,'Messias',18,'Meia central',5);
+
+select * from atleta as atl, pais as pa where atl.fkPais = pa.idPais;
+
+select * from atleta as atl, pais as pa where atl.fkPais = pa.idPais and pa.nome like 'Brasil';
+
+-------------------------------------------------------------------------------------------------
+
+create database musica;
+
+use musica;
+
+create table musica (
+idMusica int primary key auto_increment,
+titulo varchar(40),
+artista varchar(40),
+genero varchar(40)
+);
+
+insert into musica values
+(null,'Last Kiss','Pearl Jam','grunge'),
+(null,'Jeremy','Pearl Jam','grunge'),
+(null,'Sirens','Pearl Jam','grunge'),
+(null,'B.Y.O.B','System of a Down','heavy metal'),
+(null,'Violence Pornografy','System of a Down','heavy metal'),
+(null,'Come as you are','Nirvana','grunge'),
+(null,'Smell like a teen spirit','NIrvana','grunge');
+
+create table album (
+idAlbum int primary key auto_increment,
+nome varchar(40),
+gravadora varchar(40)
+);
+
+insert into album values
+(null, 'Ten','Epic Records'),
+(null, 'Verona, Italy', 'Epic Records'),
+(null, 'Lightning Bolt','Pearl Jam/Monkeywrench'),
+(null,'Mezmerize','American Recordings'),
+(null,'Nevermind','DGC Records');
+
+alter table musica add column fkAlbum int;
+
+alter table musica add constraint fkAlbum
+foreign key (fkAlbum) references album(idAlbum);
+
+update musica set fkAlbum = 1 where idMusica = 1;
+
+update musica set fkAlbum = 2 where idMusica = 2;
+
+update musica set fkAlbum = 3 where idMusica = 3;
+
+update musica set fkAlbum = 4 where idMusica = 4;
+
+update musica set fkAlbum = 4 where idMusica = 5;
+
+update musica set fkAlbum = 5 where idMusica = 6;
+
+update musica set fkAlbum = 5 where idMusica = 7;
+
+select * from musica as mus, album as al where mus.fkAlbum = al.idAlbum;
+
+select * from musica as mus, album as al where mus.fkAlbum = al.idAlbum and al.nome like 'Mezmerize';
+
+select * from musica as mus, album as al where mus.fkALbum = al.idAlbum and al.gravadora like 'Epic Records'; 
+
+----------------------------------------------------------------------------------------------------------------
+
+create database escolha;
+
+use escolha;
+
+create table aluno (
+idAluno int primary key auto_increment,
+nome varchar (40),
+RA varchar (40),
+telefone varchar (40),
+e_mail varchar (40),
+fkInstituicao_origem int,
+fkEmpresa_interesse int,
+hobby varchar (40),
+foreign key (fkInstituicao_origem) references instituicao (idEscola),
+foreign key (fkEmpresa_interesse) references empresa (idEmpresa)
+);
+
+create table instituicao (
+idEscola int primary key auto_increment,
+nome varchar (40),
+bairro varchar (40)
+);
+
+create table empresa (
+idEmpresa int primary key auto_increment,
+nome varchar (40),
+representante varchar (40)
+);
+
+insert into aluno values
+(null,'Heinrick','50001','984736125','heinrick@gmail.com',1,1,'truco'),
+(null,'Cruz','50002','984372125','cruz@gmail.com',2,1,'ler'),
+(null,'VG','50003','984712342','vg@gmail.com',2,2,'correr'),
+(null,'Shadow','50004','957336125','shadow@gmail.com',1,2,'jogar bola');
+
+insert into instituicao values
+(null,'E.E.Antonio florentino','jardim Jacira'),
+(null,'ETEC Zona Sul', 'jardim Vergueiro');
+
+insert into empresa values
+(null,'idwall','Antom'),
+(null,'totvs','Montan');
+
+select * from aluno as al, instituicao as ins, empresa as emp where al.fkInstituicao_origem = ins.idEscola and
+al.fkEmpresa_interesse = emp.idEmpresa;
+
+select * from aluno as al, instituicao as ins, empresa as emp where al.fkInstituicao_origem = ins.idEscola and 
+al.fkEmpresa_interesse = emp.idEmpresa and emp.nome like 'totvs';
+
+select * from aluno as al, instituicao as ins, empresa as emp where al.fkInstituicao_origem = ins.idEscola and 
+al.fkEmpresa_interesse = emp.idEmpresa and ins.nome like 'ETEC Zona Sul';

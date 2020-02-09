@@ -1,0 +1,336 @@
+/* Caso esteja no vs code navegue através da miniatura visível na lateral
+direita da tela, canto superior, usando os comentários como referência
+onde:
+- o primeiro é sobre o posicionamento compartilhado de todas as páginas;
+- o segundo é sobre o posicionamento das caixas dentro do conteúdo presente na página index;
+- o terceiro é sobre o posicionamento das caixas dentro do conteúdo presente na página login;
+- o quarto é sobre o posicionamento das caixas dentro do conteúdo presente na página cadastro;
+- o quinto é sobre o posicionamento das caixas dentro e fora do conteúdo presente na página home;
+- o sexto é sobre o posicionamento das caixas dentro e fora do conteúdo presente na página home cadastrados.
+ */
+
+
+
+
+/* posicionamento padrão das páginas */
+
+    body{
+        margin: 0px;
+        padding: 0px;
+    }
+    
+    .tipo_botao{
+        float: left;
+        position: relative;
+        padding: 10px;
+    }
+    .imagem{
+        width: 100vw;
+        height: 100vh;
+    }
+    .barra_superior{
+        height: 11vh;
+        width:  100vw;
+        margin-left: -5px;
+    }
+    .home{
+        position: absolute;
+        margin-left: 1vw;
+        padding: 10px;
+        margin-top: -17px;
+    }
+    .logo{
+        height: 80px;
+        width: 80px;
+    }
+    .login{
+        position: absolute;
+        margin-left: 86vw;
+        padding: 10px;
+        margin-top: 10px;
+    }
+    .cadastro{
+        position: absolute;
+        margin-left: 92vw;
+        padding: 10px;
+        margin-top: 10px;
+    }
+
+    .conteudo{
+        height: 78vh;
+        width: 100vw;
+    }
+
+    .barra_inferior{
+        height: 10vh;
+        width:  100vw;
+        margin-left: -5px;
+        margin-top: 10px;
+    }
+    .email{
+        position: absolute;
+        margin-top: 35px;
+        margin-left: 1vw;
+    }
+    .telefone{
+        position: absolute;
+        margin-top: 15px;
+        margin-left: 1vw;
+    }
+
+    
+    
+    /* posicionamento das caixas da página index */
+    .caixa_meio{
+        position: absolute;
+        margin-top: 12vh; 
+        margin-left: 25vw;
+        width: 50vw;
+        height: 50vh;
+    }
+    .index_conteudo{
+        position: relative;
+        margin-left: 20%;
+        margin-right: 20%;
+        height: 50px; 
+    }
+    .botoes{
+        position: relative;
+        margin-top: 10000px;
+    }
+    .ir_para_cadastrar{
+        width: 75px;
+        margin-left: 110px;
+        margin-top: 45px;
+    }
+    .ir_para_login{
+        width: 45px;
+        margin-left: 10px;
+        margin-top: 45px;
+    }
+    .ir_para_home{
+        width: 105px;
+        margin-left: 150px;
+        margin-top: 45px;
+    }
+
+
+
+    /* posicionamento das caixas da página login */
+
+    .login_caixa_meio{
+        position: absolute;
+        margin-top: 12vh; 
+        margin-left: 37.5vw;
+        width: 25vw;
+        height: 50vh;
+    }
+    
+    .login_caixa_meio h1{
+        text-align: center;
+    }
+    .email{
+        position: relative;
+        text-align: center;
+        margin: 10px;
+    }
+
+    .senha{
+        position: relative;
+        text-align: center;
+        margin: 10px;
+    }
+
+    .recuperar_senha{
+        position: relative;
+        text-align: center;
+
+    }
+
+    .logar{
+        width: 50px;
+        margin-left: 85px;
+        margin-top: 50px;
+    }
+
+    .login_ir_para_cadastro{
+        width: 80px;
+        margin-left: 5px;
+        margin-top: 50px;
+    }
+
+
+
+    /* posicionamento das caixas da página do cadastro */
+
+    .cadastro_caixa_meio{
+        position: absolute;
+        margin-top: 8vh; 
+        margin-left: 35vw;
+        width: 30vw;
+        height: 63vh;
+        text-align: center;
+    }
+
+    .cadastro_nome{
+        padding: 1px;
+        margin-top: -15px;
+    }
+    .cadastro_email{
+        padding: 1px;
+    }
+    .cadastro_senha1{
+        padding: 1px;
+    }
+    .cadastro_senha2{
+        padding: 1px;
+    }
+    .cadastro_cadastrar{
+        padding: 10px;
+        width: 100px;
+        margin-left: 34%;
+        margin-top: 5px;
+    }
+    .frase{
+        margin-top: -15px;
+    }
+
+    /* posicionamento das caixas e textos da página home */
+
+    .calculadora_normal{
+        width: 170px;
+        margin-left: 130px;
+        margin-top: 8px;
+    }
+    .calculadora_cientifica{
+        width: 190px;
+        margin-left: 10px;
+        margin-top: 8px;
+    }
+
+    .home_caixa_meio{
+        width: 97%;
+        height: 97%;
+        margin-top: 10px;
+        margin-left: 20px;
+    }
+
+    .home_logo{
+        width: 300px;
+        height: 300px;
+        margin-left:32%;
+    }
+
+    .home_caixa_meio h1{
+        margin-top: -50px; 
+    }
+
+    .home_caixa_normal {
+        position: relative;
+        width: 97%;
+        height: 97%;
+        margin-top: 10px;
+        margin-left: 20px;
+    }
+
+    .home_calculadora_normal_uso{
+        margin-bottom: 100px; 
+        width: 800px; 
+        position: absolute;
+        background-color: black; 
+        color: white; 
+        height: 250px; 
+        border-radius: 15px;
+    }
+
+    .home_calculadora_cientifica_uso{
+        margin-bottom: 100px; 
+        width: 800px; 
+        position: absolute;
+        background-color: black; 
+        color: white; 
+        height: 150px; 
+        border-radius: 15px;
+    }
+    .home_caixa_cientifica {
+        position: relative;
+        width: 97%;
+        height: 97%;
+        margin-top: 10px;
+        margin-left: 20px;
+    }
+
+    .home_caixa_cientifica h1{
+        text-align: center;
+        font-size: 45px;
+    }
+
+    .home_caixa_cientifica span{
+        margin-left: 10px;
+    }
+
+    .home_caixa_cientifica p{
+        text-align: unset;
+
+    }
+
+    .escolha_cientifica{
+        padding-left: 100px; 
+        padding-right: 100px;  
+        padding-top: 15px;
+        padding-bottom: 50px;  
+        margin-left: 10px;
+    }
+
+    .caixa_escolhida_cientifica{
+        margin-left: 30px;
+        margin-top: 50px;
+    }
+
+    .resultado_potencia{
+        height: 200px;
+        width: 98%;
+    }
+     /* posicionamento das caixas e textos da página home cadastrados */
+
+    
+     .cadastrado_calculadora{
+        width: 107px;
+        margin-left: 130px;
+        margin-top: 8px;
+    }
+
+    .cadastrado_matematica{
+        width: 95px;
+        margin-left: 10px;
+        margin-top: 8px;
+    }
+
+    .cadastrado_fisica{
+        width: 50px;
+        margin-left: 10px;
+        margin-top: 8px;
+    }
+
+    .cadastrado_quimica{
+        width: 70px;
+        margin-left: 10px;
+        margin-top: 8px;
+    }
+
+    .home_cadastrado_tipo_caixa{
+        width: 97%;
+        height: 97%;
+        margin-top: 10px;
+        margin-left: 20px;
+    }
+
+    .cadastrado_escolha{
+        padding-left: 80px; 
+        padding-right: 80px;  
+        padding-top: 15px;
+        padding-bottom: 50px;  
+        margin-left: 10px;
+        border-radius: 10px;
+
+    }

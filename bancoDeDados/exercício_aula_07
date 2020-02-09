@@ -1,0 +1,28 @@
+entidades:
+
+-professores;
+-projetos;
+-estudantes;
+-departamento.
+
+atributos: 
+
+- professores : Nome, CPF, especialidade de pesquisa, posição;
+- Projetos : Número do projeto, órgão financiador, data inicial,
+  data final, orçamento;
+- Estudantes : Nome, CPF, Data de nascimento,
+  programa de pós(mestrado ou doutorado);
+- departamento : número do departamento, nome.
+
+relacionamentos:
+
+- Um professor gerencia um projeto;
+- Um projeto pode ter um ou mais professores;
+- Professores podem participar de um ou vários projetos;
+- Departamento é administrado por um professor(chefe de departamento);
+- Professores podem trabalhar em um ou mais departamentos;
+- Alunos de pós-graduação se associam a um
+ departamento (responsável pelo seu programa de pós);
+- cada aluno é aconselhado por um outro aluno de pós mais experiente. 
+
+

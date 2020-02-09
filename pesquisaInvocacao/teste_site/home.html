@@ -1,0 +1,1125 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./template.css">
+
+</head>
+
+<body> 
+
+    <div class="imagem">
+
+        <!-- div direcionada para a formatação da barra superior -->
+
+        <div class="barra_superior">
+
+            <div class="home"><a href="./home.html"><img class="logo" src="./logo.png" alt="Image"> </a></div> 
+            
+            <div class="calculadora_normal tipo_botao">
+
+                <span onclick="normal()">Calculadora Simples</span> 
+
+            </div>
+
+            <div class="calculadora_cientifica tipo_botao">
+
+                <span onclick="cientifica()">Calculadora Científica</span> 
+
+            </div>
+            
+            <div class="login tipo_botao"><a href="./login.html">Login</a></div> 
+            <div class="cadastro tipo_botao"><a href="./cadastro.html">Cadastro</a></div> 
+
+        </div>
+         
+        <!-- div direcinada para o conteúdo presente na página -->
+
+        <div class="conteudo">
+
+            <!-- Conteúdo que estará visível ao abrir a página -->
+
+            <div id="caixa1" class="home_caixa_meio tipo_caixa_meio" style="display: block;">
+
+               <div class="home_logo"><img class="home_logo"src="./logo.png" alt="logo da página"></div>
+
+               <h1>Um site para todos os cálculos</h1>
+               <h3>Use a barra superior e comece a calcular</h3>
+            
+            </div>
+            
+            <!-- Conteúdo que estará visível ao escolher a calculadora normal -->
+
+            <div id="caixa2" class="home_caixa_normal tipo_caixa_meio" style="display: none;">
+                
+                <h1>Bem vindo ao modo calculadora</h1>
+                 
+                <h2 onmouseover="usar()" onmouseout="desusar()" style="margin-left: 10px; width: 150px">Modo de uso</h2> 
+                
+                <div  id="home_caixa_normal_texto" style="display:none; position: absolute;">
+                    <div class="home_calculadora_normal_uso" style="display: block;">
+                            
+                        <p style="margin-left:10px;">Bem vindo a calculadora normal da Easymath. Este modelo compreende somente as quatro operações fundamenais 
+                            e funciona da seguinte forma:
+                            
+                            <ol>
+                                
+                                <li> Escolha quantos espaços irá usar </li>
+                                <li> Escolha quantas casas decimais irá usar </li>
+                                <li> Clique em selecionar </li>
+                                <li> Digite os números nas caixas </li>
+                                <li> Clique em calcular </li>
+    
+                            </ol> 
+                            obs:
+                            <ul>
+                                <li> Recomeda-se inserir somente números nos espaços </li>
+                                <li> Há de nenhuma até seis casas decimais, não sendo obrigatórias; caso não seja especificado, será sem casas decimais</li>
+
+                            </ul>
+    
+                        </p>
+                    </div>
+                </div>
+                <span>Escolha que tipo de operador deseja usar</span>
+
+                <select name="" id="home_operador">
+
+                    <option value="somar">Adição</option>
+                    <option value="subtrair">Subtração</option>
+                    <option value="multiplicar">Multiplicação</option>
+                    <option value="dividir">Divisão</option>
+
+                </select>
+                
+                <br>
+                
+                <span>Escolha quantos números usara</span>
+
+                <select name="" id="home_numero_caixas">
+
+                    <option value="2">Dois</option>
+                    <option value="3">Três</option>
+                    <option value="4">Quatro</option>
+                    <option value="5">Cinco</option>
+
+                </select>
+                
+                <br>
+
+                <span>Insina quantos números decimais irá querer</span>
+
+                <input type="number" id="decimal">
+                
+                <button onclick="escolher()">Escolher</button>
+
+                <div>
+                    <span id="resultado" style="margin-left: 10px;"></span>
+                    <span id="resultado_conta"></span>
+                </div>
+
+                <button id="calculando" onclick="falso()" style="margin-left: 10px;">Calcular</button>
+            </div>
+                        
+            <!-- Conteúdo que estará visível ao escolher a calculadora científica -->
+
+            <div id="caixa3" class="home_caixa_cientifica tipo_caixa_meio" style="display: none; ">
+                
+                <h1>Bem vindo ao modo calculadora Científica</h1>
+                
+                <h2 onmouseover="olhar()" onmouseout="desolhar()" style="margin-left: 10px; width: 150px;">Modo de uso</h2>
+
+                <div class="home_calculadora_cientifica_uso" id="home_caixa_cientifica_texto" style="display: none;;">
+                        
+                    <p style="margin-left:10px;">Bem vindo a calculadora Científica da Easymath. Este modelo compreende os cálculos de potência, raizes, porcentagem,
+                    expoente e regra de três, funcionando da seguinte forma:
+                        
+                        <ol>
+                            
+                            <li> Escolha qual tipo de cálculo irá realizar </li>
+                            <li> Preencha os campos de acordo com as indicações </li>
+                            <li> Clique em calcular </li>
+
+                        </ol> 
+
+                    </p>
+                </div>
+                <div>        
+                    <span onclick="potencia()" class="escolha_cientifica" style="background-color: red; margin-left: 70px">Potência</span>
+                    <span onclick="raiz()" class="escolha_cientifica" style="background-color: blue;">Raizes</span>
+                    <span onclick="porcentagem()" class="escolha_cientifica" style="background-color: green;">Porcentagem</span>
+                    <span onclick="regra_de_tres()" class="escolha_cientifica" style="background-color: purple;">Regra de três</span>
+                </div>
+               
+               <br>
+
+               <div id="caixa_potencia" class="caixa_escolhida_cientifica">
+                    <span>escolha o número da base</span>
+                    
+                    <input id="base" placeholder="X">
+                    
+                    <span>escolha o número do expoente</span>
+                    <input id="valor_do_expoente" placeholder="Y">
+                    
+                    <button onclick="potencializar()">Calcular</button>
+                    
+                    <div class="resultado_potencia">
+                    
+                        <div id="potencia_mostrador_expoente" style="font-size: 60px; margin-left: 180px">Y</div>
+                        
+                        <span style="font-size: 100px; margin-left: 40px;">
+                            <span id="potencia_mostrador_base">X</span>
+                            <span>=</span>
+                        </span>
+                        
+                        <span id="potencia_mostrador_resultado" style="font-size: 100px;">Z</span>
+                    
+                    </div>
+
+                </div>
+
+                <div id="caixa_raiz" class="caixa_escolhida_cientifica">
+                    <span>escolha o indice da raiz</span>
+                    
+                    <select name="" id="indice">
+                        <option value="quadrada">raiz quadrada</option>
+                        <option value="cubo">raiz cúbica</option>
+                    </select>
+
+                    <span>escolha o radicando da raiz</span>
+
+                    <input id="radicando" placeholder="X">
+
+                    <button onclick="radiando()">Calcular</button>
+                    <div style="font-size: 70px;">
+                        <span id="raiz_mostrador_indice" style="font-size: 50px;">2</span> <br> 
+                        <span style="font-size: 100px;">√</span>
+                        <span id="raiz_mostrador_radicando">X</span>
+                        <span>=</span>
+                        <span id="raiz_mostrador_resultado">Y</span>
+                    </div>
+                </div>
+
+                <div id="caixa_porcentagem" class="caixa_escolhida_cientifica">
+                    <span>escolha o número correspondente a cem por cento</span>
+
+                    <input id="cem_por_cento" placeholder="X">
+
+                    <span>escolha a porcentagem do número</span>
+
+                    <input id="porcentagem_escolhida" placeholder="Y">
+
+                    <button onclick="porcentando()">Calcular</button>
+
+                    <div class="resultado_porcentagem">
+                        <span>100%</span> <span>=</span>
+                        <span id="porcentagem_mostrador_correspondente_um">X</span> <br>
+                        <span id="porcentagem_mostrador_porcentagem_escolhida">Y%</span> <span>=</span>
+                        <span id="porcentagem_mostrador_correspondente_dois">Z</span>
+                    </div>
+                
+                </div>
+
+                <div id="caixa_regra_tres" class="caixa_escolhida_cientifica">
+                    <span>Escolha o primerio valor</span>
+
+                    <input id="primeiro_valor" placeholder="A">
+
+                    <span>Escolha o correspondente do primerio valor</span>
+
+                    <input id="correspondente_primeiro_valor" placeholder="B">
+
+                   <span>Escolha o segundo valor</span>
+
+                    <input id="segundo_valor" placeholder="C">
+
+                    <button onclick="regrando_de_tres()">Calculador</button>
+
+                    <div class="resultado_regra_tres">
+                            <span id="regra_tres_mostrador_primeiro_valor"> A</span> <span>=</span>
+                            <span id="regra_tres_mostrador_correspondente_primeiro_valor">B</span> <br>
+                            <span id="regra_tres_mostrador_segundo_valor">C</span> <span>=</span>
+                            <span id="regra_tres_mostrador_correspondente_segundo_valor">D</span>
+                    </div>
+                
+                </div>
+            
+            </div>
+
+        </div>
+        
+        <!-- div direcionada para a formatação da barra inferior / coloca negosso de contato e pans -->
+        
+        <div class=barra_inferior> 
+            
+            <span class="telefone">telefone (99) 9 9999-9999</span>
+            <span class="email">email de contato email@email.com</span>  
+        
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>
+
+<script>
+    
+    var conta_potencia = 0;
+     
+    function potencializar() {
+        potencia_mostrador_base.innerHTML = '';
+        potencia_mostrador_expoente.innerHTML = '';
+        potencia_mostrador_resultado.innerHTML = '';
+
+
+        var valor_base = Number(base.value);
+        var valor_expoente = Number(valor_do_expoente.value);     
+        
+         if(valor_expoente > 0 ){
+            
+            conta_potencia = valor_base;
+        
+            for (var contador = 1 ; contador < valor_expoente ; contador++){
+            conta_potencia = conta_potencia * valor_base ;
+            }
+            
+        
+         } else if(valor_expoente < 0){
+            
+            conta_potencia = valor_base;
+        
+            for (var contador = -1 ; contador > valor_expoente ; contador--){
+                conta_potencia *= valor_base;
+            }
+        
+            conta_potencia = 1/conta_potencia ; 
+        
+        }else{     
+            conta_potencia = valor_base;
+        }
+        
+        potencia_mostrador_base.innerHTML = `${valor_base}`;
+        potencia_mostrador_expoente.innerHTML = `${valor_expoente}`;
+        potencia_mostrador_resultado.innerHTML = `${conta_potencia}`;
+
+    }
+
+    function radiando(){
+        raiz_mostrador_indice.innerHTML = '';
+        raiz_mostrador_radicando.innerHTML = '';
+        raiz_mostrador_resultado.innerHTML = '';
+
+        var valor_indice = indice.value;
+        var valor_radicando = Number(radicando.value);
+
+        if (valor_indice == 'quadrada'){
+            raiz_mostrador_radicando.innerHTML = `${valor_radicando}`;
+            raiz_mostrador_resultado.innerHTML = `${Math.sqrt(valor_radicando).toFixed(2)}`;
+            raiz_mostrador_indice.innerHTML = '2';
+        } else if (valor_indice == 'cubo'){
+            raiz_mostrador_radicando.innerHTML = `${valor_radicando}`;
+            raiz_mostrador_resultado.innerHTML = `${Math.cbrt(valor_radicando).toFixed(2)}`;
+            raiz_mostrador_indice.innerHTML = '3';
+        }
+    }
+
+    function porcentando(){
+        porcentagem_mostrador_correspondente_um.innerHTML = '';
+        porcentagem_mostrador_porcentagem_escolhida.innerHTML = '';
+        porcentagem_mostrador_correspondente_dois.innerHTML = '';
+
+        var valor_cem_por_cento = Number(cem_por_cento.value);
+        var valor_porcentagem_escolhida = Number(porcentagem_escolhida.value);
+        var um_por_cento = valor_cem_por_cento / 100;
+        var conta = 0;
+
+        if(valor_porcentagem_escolhida >= 0){
+        
+            for(var contador = 0; contador < valor_porcentagem_escolhida; contador ++){
+                conta += um_por_cento;
+            }
+        
+        } else {
+
+            for(var contador = 0; contador > valor_porcentagem_escolhida; contador --){
+                conta -= um_por_cento;
+            }
+
+        }
+
+        porcentagem_mostrador_correspondente_um.innerHTML = `${valor_cem_por_cento}`;
+        porcentagem_mostrador_porcentagem_escolhida.innerHTML = `${valor_porcentagem_escolhida} %`;
+        porcentagem_mostrador_correspondente_dois.innerHTML = `${conta.toFixed(2)}`;
+
+    }
+
+    function regrando_de_tres(){
+        regra_tres_mostrador_primeiro_valor.innerHTML = '';
+        regra_tres_mostrador_correspondente_primeiro_valor.innerHTML = '';
+        regra_tres_mostrador_segundo_valor.innerHTML = '';
+        regra_tres_mostrador_correspondente_segundo_valor.innerHTML = '';
+
+        var valor_primeiro_valor = Number(primeiro_valor.value);
+        var valor_correspondente_primeiro_valor = Number(correspondente_primeiro_valor.value);
+        var valor_segundo_valor = Number(segundo_valor.value);
+        var valor_correspondente_segundo_valor = Number(0);
+
+        var primeira_conta = valor_correspondente_primeiro_valor * valor_segundo_valor;
+        var valor_correspondente_segundo_valor = primeira_conta / valor_primeiro_valor;
+
+        regra_tres_mostrador_primeiro_valor.innerHTML = `${valor_primeiro_valor}`;
+        regra_tres_mostrador_correspondente_primeiro_valor.innerHTML = `${valor_correspondente_primeiro_valor}`;
+        regra_tres_mostrador_segundo_valor.innerHTML = `${valor_segundo_valor}`;
+        regra_tres_mostrador_correspondente_segundo_valor.innerHTML = `${valor_correspondente_segundo_valor.toFixed(2)}`;
+
+    }
+
+    function olhar(){
+        home_caixa_cientifica_texto.style.display = 'block';
+    }
+    
+    function desolhar(){
+        home_caixa_cientifica_texto.style.display = 'none';
+    }
+
+    function usar(){
+        home_caixa_normal_texto.style.display = 'block';
+    }
+    
+    function desusar(){
+        home_caixa_normal_texto.style.display = 'none';
+        limpar_calculadoras();
+    }
+
+    function limpar_calculadoras(){
+        document.getElementById('decimal').value = '';
+        resultado.innerHTML = '';
+        resultado_conta.innerHTML = '';
+
+        document.getElementById('base').value = '';
+        document.getElementById('valor_do_expoente').value = '';
+        potencia_mostrador_base.innerHTML = 'X';
+        potencia_mostrador_expoente.innerHTML = 'Y';
+        potencia_mostrador_resultado.innerHTML = 'Z';
+        
+        document.getElementById('radicando').value = '';
+        raiz_mostrador_indice.innerHTML = '2';
+        raiz_mostrador_radicando.innerHTML = 'X';
+        raiz_mostrador_resultado.innerHTML = 'Y';
+
+        document.getElementById('cem_por_cento').value = '';
+        document.getElementById('porcentagem_escolhida').value = '';
+        porcentagem_mostrador_correspondente_um.innerHTML = 'X';
+        porcentagem_mostrador_porcentagem_escolhida.innerHTML = 'Y';
+        porcentagem_mostrador_correspondente_dois.innerHTML = 'Z';
+
+        document.getElementById('primeiro_valor').value = '';
+        document.getElementById('correspondente_primeiro_valor').value = '';
+        document.getElementById('segundo_valor').value = '';
+        regra_tres_mostrador_primeiro_valor.innerHTML = 'A';
+        regra_tres_mostrador_correspondente_primeiro_valor.innerHTML = 'B';
+        regra_tres_mostrador_segundo_valor.innerHTML = 'C';
+        regra_tres_mostrador_correspondente_segundo_valor.innerHTML = 'D';
+
+    }
+    function ver(a,b,c){
+        caixa1.style.display = a;
+        caixa2.style.display = b;
+        caixa3.style.display = c;
+        
+        limpar_calculadoras();
+    }
+
+    function escolhido_cientifica(a,b,c,d){
+        caixa_potencia.style.display = a;
+        caixa_raiz.style.display = b;
+        caixa_porcentagem.style.display = c;
+        caixa_regra_tres.style.display = d;
+
+        limpar_calculadoras();
+
+    }
+
+    function potencia(){ 
+        escolhido_cientifica('block','none','none','none');
+    }
+
+    function raiz(){ 
+        escolhido_cientifica('none','block','none','none');
+    }
+
+    function porcentagem(){ 
+        escolhido_cientifica('none','none','block','none');
+    }
+
+    function regra_de_tres(){ 
+        escolhido_cientifica('none','none','none','block');
+    }
+
+    var contando = 5;
+
+    function cientifica(){
+        ver('none','none','block');
+        escolhido_cientifica('none','none','none','none');
+    }
+
+    function normal(){
+        ver('none','block','none');
+        escolhido_cientifica('none','none','none','none');
+    }
+
+    function falso(){
+        
+        var contador = 0;
+        contador ++;
+
+    }
+
+    function escolher(){
+        resultado_conta.innerHTML = '';
+        var operador = home_operador.value;
+        var caixas = Number(home_numero_caixas.value);
+        var contador = 1;
+    
+        resultado.innerHTML = '';
+
+        if (operador == 'somar'){
+            
+            contando = 5;
+            
+            while (contador <= caixas){
+                
+
+                if(contador < caixas){        
+                    contador++;
+                    resultado.innerHTML += `<input type="number" id="${'caixa' + (contador + 4)}"> + `;
+                
+                    contando ++;
+                }
+
+                if(contador == caixas){
+                    
+                    resultado.innerHTML += `<input type="number" id="${'caixa' + (contador + 5)}"> = `;
+                    contador++;
+
+                    contando ++;
+                }
+            }
+
+            document.getElementById('calculando').onclick = function() {
+            
+                var Elementid = this.id;
+                Elementid == "calculando" ? calcular() : falso(); 
+
+            }
+            
+            function calcular(){
+        
+                var conta = Number(0);
+
+                if(contando == 7){
+                    conta += Number(caixa6.value);
+                    conta += Number(caixa7.value);
+
+                    if(decimal.value == 1){
+                        resultado_conta.innerHTML = '';
+                        resultado_conta.innerHTML += `${(conta).toFixed(1)}`;
+                    }else if(decimal.value == 2){
+                        resultado_conta.innerHTML = '';
+                        resultado_conta.innerHTML += `${(conta).toFixed(2)}`;
+                    }else if(decimal.value == 3){
+                        resultado_conta.innerHTML = '';
+                        resultado_conta.innerHTML += `${(conta).toFixed(3)}`;
+                    } else if(decimal.value == 4){
+                        resultado_conta.innerHTML = '';
+                        resultado_conta.innerHTML += `${(conta).toFixed(4)}`;
+                    } else if(decimal.value == 5){
+                        resultado_conta.innerHTML = '';
+                        resultado_conta.innerHTML += `${(conta).toFixed(5)}`;
+                    } else if(decimal.value == 6){
+                        resultado_conta.innerHTML = '';
+                        resultado_conta.innerHTML += `${(conta).toFixed(6)}`;
+                    } else {
+                        resultado_conta.innerHTML = '';
+                        resultado_conta.innerHTML += `${conta}`;
+                    }
+                }
+
+                else if(contando == 8){
+                    conta += Number(caixa6.value);
+                    conta += Number(caixa7.value);
+                    conta += Number(caixa8.value);
+
+                    if(decimal.value == 1){
+                        resultado_conta.innerHTML = '';
+                        resultado_conta.innerHTML += `${(conta).toFixed(1)}`;
+                    }else if(decimal.value == 2){
+                        resultado_conta.innerHTML = '';
+                        resultado_conta.innerHTML += `${(conta).toFixed(2)}`;
+                    }else if(decimal.value == 3){
+                        resultado_conta.innerHTML = '';
+                        resultado_conta.innerHTML += `${(conta).toFixed(3)}`;
+                    } else if(decimal.value == 4){
+                        resultado_conta.innerHTML = '';
+                        resultado_conta.innerHTML += `${(conta).toFixed(4)}`;
+                    } else if(decimal.value == 5){
+                        resultado_conta.innerHTML = '';
+                        resultado_conta.innerHTML += `${(conta).toFixed(5)}`;
+                    } else if(decimal.value == 6){
+                        resultado_conta.innerHTML = '';
+                        resultado_conta.innerHTML += `${(conta).toFixed(6)}`;
+                    } else {
+                        resultado_conta.innerHTML = '';
+                        resultado_conta.innerHTML += `${conta}`;
+                    }
+                }
+
+                else if(contando == 9){
+                    conta += Number(caixa6.value);
+                    conta += Number(caixa7.value);
+                    conta += Number(caixa8.value);
+                    conta += Number(caixa9.value);
+
+                    if(decimal.value == 1){
+                        resultado_conta.innerHTML = '';
+                        resultado_conta.innerHTML += `${(conta).toFixed(1)}`;
+                    }else if(decimal.value == 2){
+                        resultado_conta.innerHTML = '';
+                        resultado_conta.innerHTML += `${(conta).toFixed(2)}`;
+                    }else if(decimal.value == 3){
+                        resultado_conta.innerHTML = '';
+                        resultado_conta.innerHTML += `${(conta).toFixed(3)}`;
+                    } else if(decimal.value == 4){
+                        resultado_conta.innerHTML = '';
+                        resultado_conta.innerHTML += `${(conta).toFixed(4)}`;
+                    } else if(decimal.value == 5){
+                        resultado_conta.innerHTML = '';
+                        resultado_conta.innerHTML += `${(conta).toFixed(5)}`;
+                    } else if(decimal.value == 6){
+                        resultado_conta.innerHTML = '';
+                        resultado_conta.innerHTML += `${(conta).toFixed(6)}`;
+                    } else {
+                        resultado_conta.innerHTML = '';
+                        resultado_conta.innerHTML += `${conta}`;
+                    }
+                }
+
+                else{
+                    conta += Number(caixa6.value);
+                    conta += Number(caixa7.value);
+                    conta += Number(caixa8.value);
+                    conta += Number(caixa9.value);
+                    conta += Number(caixa10.value);
+
+                    if(decimal.value == 1){
+                        resultado_conta.innerHTML = '';
+                        resultado_conta.innerHTML += `${(conta).toFixed(1)}`;
+                    }else if(decimal.value == 2){
+                        resultado_conta.innerHTML = '';
+                        resultado_conta.innerHTML += `${(conta).toFixed(2)}`;
+                    }else if(decimal.value == 3){
+                        resultado_conta.innerHTML = '';
+                        resultado_conta.innerHTML += `${(conta).toFixed(3)}`;
+                    } else if(decimal.value == 4){
+                        resultado_conta.innerHTML = '';
+                        resultado_conta.innerHTML += `${(conta).toFixed(4)}`;
+                    } else if(decimal.value == 5){
+                        resultado_conta.innerHTML = '';
+                        resultado_conta.innerHTML += `${(conta).toFixed(5)}`;
+                    } else if(decimal.value == 6){
+                        resultado_conta.innerHTML = '';
+                        resultado_conta.innerHTML += `${(conta).toFixed(6)}`;
+                    } else {
+                        resultado_conta.innerHTML = '';
+                        resultado_conta.innerHTML += `${conta}`;
+                    }
+                }
+            }
+
+        }
+
+        if (operador == 'subtrair'){
+            
+            contando = 5;
+            
+            while (contador <= caixas){
+                
+
+                if(contador < caixas){        
+                    contador++;
+                    resultado.innerHTML += `<input type="number" id="${'caixa' + (contador + 4)}"> - `;
+                
+                    contando ++;
+                }
+
+                if(contador == caixas){
+                    
+                    resultado.innerHTML += `<input type="number" id="${'caixa' + (contador + 5)}"> = `;
+                    contador++;
+
+                    contando ++;
+                }
+            }
+
+            document.getElementById('calculando').onclick = function() {
+            
+                var Elementid = this.id;
+                Elementid == "calculando" ? calcular() : falso(); 
+
+            }
+            
+            function calcular(){
+        
+                var conta = Number(0);
+                if(contando == 7){
+                    conta += Number(caixa6.value);
+                    conta -= Number(caixa7.value);
+
+                    if(decimal.value == 1){
+                        resultado_conta.innerHTML = '';
+                        resultado_conta.innerHTML += `${(conta).toFixed(1)}`;
+                    }else if(decimal.value == 2){
+                        resultado_conta.innerHTML = '';
+                        resultado_conta.innerHTML += `${(conta).toFixed(2)}`;
+                    }else if(decimal.value == 3){
+                        resultado_conta.innerHTML = '';
+                        resultado_conta.innerHTML += `${(conta).toFixed(3)}`;
+                    } else if(decimal.value == 4){
+                        resultado_conta.innerHTML = '';
+                        resultado_conta.innerHTML += `${(conta).toFixed(4)}`;
+                    } else if(decimal.value == 5){
+                        resultado_conta.innerHTML = '';
+                        resultado_conta.innerHTML += `${(conta).toFixed(5)}`;
+                    } else if(decimal.value == 6){
+                        resultado_conta.innerHTML = '';
+                        resultado_conta.innerHTML += `${(conta).toFixed(6)}`;
+                    } else {
+                        resultado_conta.innerHTML = '';
+                        resultado_conta.innerHTML += `${conta}`;
+                    }
+
+                }
+
+                if(contando == 8){
+                    conta += Number(caixa6.value);
+                    conta -= Number(caixa7.value);
+                    conta -= Number(caixa8.value);
+                   
+                    if(decimal.value == 1){
+                        resultado_conta.innerHTML = '';
+                        resultado_conta.innerHTML += `${(conta).toFixed(1)}`;
+                    }else if(decimal.value == 2){
+                        resultado_conta.innerHTML = '';
+                        resultado_conta.innerHTML += `${(conta).toFixed(2)}`;
+                    }else if(decimal.value == 3){
+                        resultado_conta.innerHTML = '';
+                        resultado_conta.innerHTML += `${(conta).toFixed(3)}`;
+                    } else if(decimal.value == 4){
+                        resultado_conta.innerHTML = '';
+                        resultado_conta.innerHTML += `${(conta).toFixed(4)}`;
+                    } else if(decimal.value == 5){
+                        resultado_conta.innerHTML = '';
+                        resultado_conta.innerHTML += `${(conta).toFixed(5)}`;
+                    } else if(decimal.value == 6){
+                        resultado_conta.innerHTML = '';
+                        resultado_conta.innerHTML += `${(conta).toFixed(6)}`;
+                    } else {
+                        resultado_conta.innerHTML = '';
+                        resultado_conta.innerHTML += `${conta}`;
+                    }
+
+                }
+
+                if(contando == 9){
+                    conta += Number(caixa6.value);
+                    conta -= Number(caixa7.value);
+                    conta -= Number(caixa8.value);
+                    conta -= Number(caixa9.value);
+
+                    if(decimal.value == 1){
+                        resultado_conta.innerHTML = '';
+                        resultado_conta.innerHTML += `${(conta).toFixed(1)}`;
+                    }else if(decimal.value == 2){
+                        resultado_conta.innerHTML = '';
+                        resultado_conta.innerHTML += `${(conta).toFixed(2)}`;
+                    }else if(decimal.value == 3){
+                        resultado_conta.innerHTML = '';
+                        resultado_conta.innerHTML += `${(conta).toFixed(3)}`;
+                    } else if(decimal.value == 4){
+                        resultado_conta.innerHTML = '';
+                        resultado_conta.innerHTML += `${(conta).toFixed(4)}`;
+                    } else if(decimal.value == 5){
+                        resultado_conta.innerHTML = '';
+                        resultado_conta.innerHTML += `${(conta).toFixed(5)}`;
+                    } else if(decimal.value == 6){
+                        resultado_conta.innerHTML = '';
+                        resultado_conta.innerHTML += `${(conta).toFixed(6)}`;
+                    } else {
+                        resultado_conta.innerHTML = '';
+                        resultado_conta.innerHTML += `${conta}`;
+                    }
+
+                }
+
+                if(contando == 10){
+                    conta += Number(caixa6.value);
+                    conta -= Number(caixa7.value);
+                    conta -= Number(caixa8.value);
+                    conta -= Number(caixa9.value);
+                    conta -= Number(caixa10.value);
+
+                    if(decimal.value == 1){
+                        resultado_conta.innerHTML = '';
+                        resultado_conta.innerHTML += `${(conta).toFixed(1)}`;
+                    }else if(decimal.value == 2){
+                        resultado_conta.innerHTML = '';
+                        resultado_conta.innerHTML += `${(conta).toFixed(2)}`;
+                    }else if(decimal.value == 3){
+                        resultado_conta.innerHTML = '';
+                        resultado_conta.innerHTML += `${(conta).toFixed(3)}`;
+                    } else if(decimal.value == 4){
+                        resultado_conta.innerHTML = '';
+                        resultado_conta.innerHTML += `${(conta).toFixed(4)}`;
+                    } else if(decimal.value == 5){
+                        resultado_conta.innerHTML = '';
+                        resultado_conta.innerHTML += `${(conta).toFixed(5)}`;
+                    } else if(decimal.value == 6){
+                        resultado_conta.innerHTML = '';
+                        resultado_conta.innerHTML += `${(conta).toFixed(6)}`;
+                    } else {
+                        resultado_conta.innerHTML = '';
+                        resultado_conta.innerHTML += `${conta}`;
+                    }
+
+                }
+            }
+
+        }
+
+        if (operador == 'multiplicar'){
+            
+            contando = 5;
+            
+            while (contador <= caixas){
+                
+
+                if(contador < caixas){        
+                    contador++;
+                    resultado.innerHTML += `<input type="number" id="${'caixa' + (contador + 4)}"> x `;
+                
+                    contando ++;
+                }
+
+                if(contador == caixas){
+                    
+                    resultado.innerHTML += `<input type="number" id="${'caixa' + (contador + 5)}"> = `;
+                    contador++;
+
+                    contando ++;
+                }
+            }
+
+            document.getElementById('calculando').onclick = function() {
+            
+                var Elementid = this.id;
+                Elementid == "calculando" ? calcular() : falso(); 
+
+            }
+            
+            function calcular(){
+        
+                var conta = Number(0);
+
+                if(contando == 7){
+                    conta += Number(caixa6.value);
+                    conta *= Number(caixa7.value);
+
+                    if(decimal.value == 1){
+                        resultado_conta.innerHTML = '';
+                        resultado_conta.innerHTML += `${(conta).toFixed(1)}`;
+                    }else if(decimal.value == 2){
+                        resultado_conta.innerHTML = '';
+                        resultado_conta.innerHTML += `${(conta).toFixed(2)}`;
+                    }else if(decimal.value == 3){
+                        resultado_conta.innerHTML = '';
+                        resultado_conta.innerHTML += `${(conta).toFixed(3)}`;
+                    } else if(decimal.value == 4){
+                        resultado_conta.innerHTML = '';
+                        resultado_conta.innerHTML += `${(conta).toFixed(4)}`;
+                    } else if(decimal.value == 5){
+                        resultado_conta.innerHTML = '';
+                        resultado_conta.innerHTML += `${(conta).toFixed(5)}`;
+                    } else if(decimal.value == 6){
+                        resultado_conta.innerHTML = '';
+                        resultado_conta.innerHTML += `${(conta).toFixed(6)}`;
+                    } else {
+                        resultado_conta.innerHTML = '';
+                        resultado_conta.innerHTML += `${conta}`;
+                    }
+
+                }
+
+                if(contando == 8){
+                    conta += Number(caixa6.value);
+                    conta *= Number(caixa7.value);
+                    conta *= Number(caixa8.value);
+
+                    if(decimal.value == 1){
+                        resultado_conta.innerHTML = '';
+                        resultado_conta.innerHTML += `${(conta).toFixed(1)}`;
+                    }else if(decimal.value == 2){
+                        resultado_conta.innerHTML = '';
+                        resultado_conta.innerHTML += `${(conta).toFixed(2)}`;
+                    }else if(decimal.value == 3){
+                        resultado_conta.innerHTML = '';
+                        resultado_conta.innerHTML += `${(conta).toFixed(3)}`;
+                    } else if(decimal.value == 4){
+                        resultado_conta.innerHTML = '';
+                        resultado_conta.innerHTML += `${(conta).toFixed(4)}`;
+                    } else if(decimal.value == 5){
+                        resultado_conta.innerHTML = '';
+                        resultado_conta.innerHTML += `${(conta).toFixed(5)}`;
+                    } else if(decimal.value == 6){
+                        resultado_conta.innerHTML = '';
+                        resultado_conta.innerHTML += `${(conta).toFixed(6)}`;
+                    } else {
+                        resultado_conta.innerHTML = '';
+                        resultado_conta.innerHTML += `${conta}`;
+                    }
+
+                }
+
+                if(contando == 9){
+                    conta += Number(caixa6.value);
+                    conta *= Number(caixa7.value);
+                    conta *= Number(caixa8.value);
+                    conta *= Number(caixa9.value);
+
+                    if(decimal.value == 1){
+                        resultado_conta.innerHTML = '';
+                        resultado_conta.innerHTML += `${(conta).toFixed(1)}`;
+                    }else if(decimal.value == 2){
+                        resultado_conta.innerHTML = '';
+                        resultado_conta.innerHTML += `${(conta).toFixed(2)}`;
+                    }else if(decimal.value == 3){
+                        resultado_conta.innerHTML = '';
+                        resultado_conta.innerHTML += `${(conta).toFixed(3)}`;
+                    } else if(decimal.value == 4){
+                        resultado_conta.innerHTML = '';
+                        resultado_conta.innerHTML += `${(conta).toFixed(4)}`;
+                    } else if(decimal.value == 5){
+                        resultado_conta.innerHTML = '';
+                        resultado_conta.innerHTML += `${(conta).toFixed(5)}`;
+                    } else if(decimal.value == 6){
+                        resultado_conta.innerHTML = '';
+                        resultado_conta.innerHTML += `${(conta).toFixed(6)}`;
+                    } else {
+                        resultado_conta.innerHTML = '';
+                        resultado_conta.innerHTML += `${conta}`;
+                    }
+
+                }
+
+                if(contando == 10){
+                    conta += Number(caixa6.value);
+                    conta *= Number(caixa7.value);
+                    conta *= Number(caixa8.value);
+                    conta *= Number(caixa9.value);
+                    conta *= Number(caixa10.value);
+
+                    if(decimal.value == 1){
+                        resultado_conta.innerHTML = '';
+                        resultado_conta.innerHTML += `${(conta).toFixed(1)}`;
+                    }else if(decimal.value == 2){
+                        resultado_conta.innerHTML = '';
+                        resultado_conta.innerHTML += `${(conta).toFixed(2)}`;
+                    }else if(decimal.value == 3){
+                        resultado_conta.innerHTML = '';
+                        resultado_conta.innerHTML += `${(conta).toFixed(3)}`;
+                    } else if(decimal.value == 4){
+                        resultado_conta.innerHTML = '';
+                        resultado_conta.innerHTML += `${(conta).toFixed(4)}`;
+                    } else if(decimal.value == 5){
+                        resultado_conta.innerHTML = '';
+                        resultado_conta.innerHTML += `${(conta).toFixed(5)}`;
+                    } else if(decimal.value == 6){
+                        resultado_conta.innerHTML = '';
+                        resultado_conta.innerHTML += `${(conta).toFixed(6)}`;
+                    } else {
+                        resultado_conta.innerHTML = '';
+                        resultado_conta.innerHTML += `${conta}`;
+                    }
+
+                }
+            }
+       
+        }
+
+        if (operador == 'dividir'){
+            
+            contando = 5;
+            
+            while (contador <= caixas){
+                
+
+                if(contador < caixas){        
+                    contador++;
+                    resultado.innerHTML += `<input type="number" id="${'caixa' + (contador + 4)}"> / `;
+                
+                    contando ++;
+                }
+
+                if(contador == caixas){
+                    
+                    resultado.innerHTML += `<input type="number" id="${'caixa' + (contador + 5)}"> = `;
+                    contador++;
+
+                    contando ++;
+                }
+            }
+
+            document.getElementById('calculando').onclick = function() {
+            
+                var Elementid = this.id;
+                Elementid == "calculando" ? calcular() : falso(); 
+
+            }
+            
+            function calcular(){
+        
+                var conta = Number(0);
+                if(contando == 7){
+                    conta += Number(caixa6.value);
+                    conta /= Number(caixa7.value);
+
+                    if(decimal.value == 1){
+                        resultado_conta.innerHTML = '';
+                        resultado_conta.innerHTML += `${(conta).toFixed(1)}`;
+                    }else if(decimal.value == 2){
+                        resultado_conta.innerHTML = '';
+                        resultado_conta.innerHTML += `${(conta).toFixed(2)}`;
+                    }else if(decimal.value == 3){
+                        resultado_conta.innerHTML = '';
+                        resultado_conta.innerHTML += `${(conta).toFixed(3)}`;
+                    } else if(decimal.value == 4){
+                        resultado_conta.innerHTML = '';
+                        resultado_conta.innerHTML += `${(conta).toFixed(4)}`;
+                    } else if(decimal.value == 5){
+                        resultado_conta.innerHTML = '';
+                        resultado_conta.innerHTML += `${(conta).toFixed(5)}`;
+                    } else if(decimal.value == 6){
+                        resultado_conta.innerHTML = '';
+                        resultado_conta.innerHTML += `${(conta).toFixed(6)}`;
+                    } else {
+                        resultado_conta.innerHTML = '';
+                        resultado_conta.innerHTML += `${conta}`;
+                    }
+
+                }
+
+                if(contando == 8){
+                    conta += Number(caixa6.value);
+                    conta /= Number(caixa7.value);
+                    conta /= Number(caixa8.value);
+
+                    if(decimal.value == 1){
+                        resultado_conta.innerHTML = '';
+                        resultado_conta.innerHTML += `${(conta).toFixed(1)}`;
+                    }else if(decimal.value == 2){
+                        resultado_conta.innerHTML = '';
+                        resultado_conta.innerHTML += `${(conta).toFixed(2)}`;
+                    }else if(decimal.value == 3){
+                        resultado_conta.innerHTML = '';
+                        resultado_conta.innerHTML += `${(conta).toFixed(3)}`;
+                    } else if(decimal.value == 4){
+                        resultado_conta.innerHTML = '';
+                        resultado_conta.innerHTML += `${(conta).toFixed(4)}`;
+                    } else if(decimal.value == 5){
+                        resultado_conta.innerHTML = '';
+                        resultado_conta.innerHTML += `${(conta).toFixed(5)}`;
+                    } else if(decimal.value == 6){
+                        resultado_conta.innerHTML = '';
+                        resultado_conta.innerHTML += `${(conta).toFixed(6)}`;
+                    } else {
+                        resultado_conta.innerHTML = '';
+                        resultado_conta.innerHTML += `${conta}`;
+                    }
+
+                }
+
+                if(contando == 9){
+                    conta += Number(caixa6.value);
+                    conta /= Number(caixa7.value);
+                    conta /= Number(caixa8.value);
+                    conta /= Number(caixa9.value);
+
+                    if(decimal.value == 1){
+                        resultado_conta.innerHTML = '';
+                        resultado_conta.innerHTML += `${(conta).toFixed(1)}`;
+                    }else if(decimal.value == 2){
+                        resultado_conta.innerHTML = '';
+                        resultado_conta.innerHTML += `${(conta).toFixed(2)}`;
+                    }else if(decimal.value == 3){
+                        resultado_conta.innerHTML = '';
+                        resultado_conta.innerHTML += `${(conta).toFixed(3)}`;
+                    } else if(decimal.value == 4){
+                        resultado_conta.innerHTML = '';
+                        resultado_conta.innerHTML += `${(conta).toFixed(4)}`;
+                    } else if(decimal.value == 5){
+                        resultado_conta.innerHTML = '';
+                        resultado_conta.innerHTML += `${(conta).toFixed(5)}`;
+                    } else if(decimal.value == 6){
+                        resultado_conta.innerHTML = '';
+                        resultado_conta.innerHTML += `${(conta).toFixed(6)}`;
+                    } else {
+                        resultado_conta.innerHTML = '';
+                        resultado_conta.innerHTML += `${conta}`;
+                    }
+
+                }
+
+                if(contando == 10){
+                    conta += Number(caixa6.value);
+                    conta /= Number(caixa7.value);
+                    conta /= Number(caixa8.value);
+                    conta /= Number(caixa9.value);
+                    conta /= Number(caixa10.value);
+
+                    if(decimal.value == 1){
+                        resultado_conta.innerHTML = '';
+                        resultado_conta.innerHTML += `${(conta).toFixed(1)}`;
+                    }else if(decimal.value == 2){
+                        resultado_conta.innerHTML = '';
+                        resultado_conta.innerHTML += `${(conta).toFixed(2)}`;
+                    }else if(decimal.value == 3){
+                        resultado_conta.innerHTML = '';
+                        resultado_conta.innerHTML += `${(conta).toFixed(3)}`;
+                    } else if(decimal.value == 4){
+                        resultado_conta.innerHTML = '';
+                        resultado_conta.innerHTML += `${(conta).toFixed(4)}`;
+                    } else if(decimal.value == 5){
+                        resultado_conta.innerHTML = '';
+                        resultado_conta.innerHTML += `${(conta).toFixed(5)}`;
+                    } else if(decimal.value == 6){
+                        resultado_conta.innerHTML = '';
+                        resultado_conta.innerHTML += `${(conta).toFixed(6)}`;
+                    } else {
+                        resultado_conta.innerHTML = '';
+                        resultado_conta.innerHTML += `${conta}`;
+                    }
+
+                }
+            }
+        }
+    
+}
+</script>

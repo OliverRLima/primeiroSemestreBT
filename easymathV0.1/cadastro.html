@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./template.css">
+</head>
+<body> 
+        <div class="imagem">
+        <!-- div direcionada para a formatação da barra superior -->
+        <div class="barra_superior">
+            <div class="home"><a href="./home.html"><img class="logo" src="./logo.png" alt="Image"> </a></div> 
+        </div>
+         
+        <div class="conteudo">
+            <div class="cadastro_caixa_meio tipo_caixa_meio">
+                
+                <form action="/usuarios" method="POST">
+                    <h1>Cadastrar</h1>
+
+                <h4 class="frase"><a href="./login.html">Já possui conta? Clique aqui para realizar o login</a></h4> 
+                
+                <div class="cadastro_nome">
+                    Nome<br>
+                    <div id="cadastro_nome_mensagem_erro" style="color:teal">O nome deve ter pelo menos três letras</div>
+                    <input name="username" id="nome" type="text" placeholder="Digite aqui seu nome">
+                </div>
+
+                <div class="cadastro_email">
+                    Email <br>
+                    <div id="cadastro_email_mensagem_erro" style="color:teal">O email deve ser existente</div>
+                    <input name="email" id="email" type="email" placeholder="exemplo@email.com">
+                </div>
+
+                <div class="cadastro_senha1">
+                    Nova senha <br>
+                    <div id="cadastro_senha1_mensagem_erro" style="color:teal">A senha deve conter no mínimo 8 caracteres qualquer</div>
+                    <input name="senha" id="senha1" type="password" placeholder="*********">
+                </div>
+
+                <div class="cadastro_senha2">
+                    Digite novamente <br>
+                    <div id="cadastro_senha2_mensagem_erro" style="color:teal">As senhas devem ser as mesmas</div>
+                    <input id="senha2" type="password" placeholder="*********">
+                </div>
+ 
+                <div class="cadastro_cadastrar tipo_botao"><a id="cadastrinho" onclick="cadastrar()">Cadastrar</a></div>
+                </form>
+                
+                
+            </div>
+        </div>
+        
+        <!-- div direcionada para a formatação da barra inferior / coloca negosso de contato e pans -->
+        <div class=barra_inferior> 
+            <span class="telefone">telefone (99) 9 9999-9999</span>
+            <span class="email">email de contato email@email.com</span>  
+        </div>
+
+    </div>
+</div>
+</body>
+</html>
+
+<script>
+
+    function cadastrar(){
+        cadastro_nome_mensagem_erro.innerHTML = '';
+        cadastro_email_mensagem_erro.innerHTML = '';
+        cadastro_senha1_mensagem_erro.innerHTML = '';
+        cadastro_senha2_mensagem_erro.innerHTML = '';
+
+        if(nome.value.length >= 3){
+        } else {   
+            cadastro_nome_mensagem_erro.innerHTML = '<div style="color:red">Tamanho de nome insuficiente</div>';
+        }
+        
+        if ((email.value.indexOf('@') > 0) && (email.value.endsWith('@gmail.com')
+        || email.value.endsWith('@hotmail.com') || email.value.endsWith('@outlook.com'))){
+        
+        } else {
+            cadastro_email_mensagem_erro.innerHTML = '<div style="color:red">email inválido</div>';
+        }   
+        
+        if(senha1.value.length >= 8){
+        } else { 
+          
+            cadastro_senha1_mensagem_erro.innerHTML = '<div style="color:red">tamanho de senha insuficiente</div>';
+        
+        }
+         
+        if(senha1.value == senha2.value){
+        } else {  
+            
+            cadastro_senha2_mensagem_erro.innerHTML = '<div style="color:red">Senhas diferentes</div>';
+        
+        }
+  
+        if (nome.value.length >= 3 
+        && email.value.indexOf('@') > 0 
+        && (email.value.endsWith('@gmail.com')
+        || email.value.endsWith('@hotmail.com') 
+        || email.value.endsWith('@outlook.com'))
+        && senha1.value.length >= 8
+        && senha1.value == senha2.value
+        ){
+            alert('cadastro realizado com sucesso');
+            cadastrinho.href = './login.html';
+        }
+    }
+</script>
+

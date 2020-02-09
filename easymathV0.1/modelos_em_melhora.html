@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .home_tabela{
+        float: left;
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        margin-left: 900px;
+        margin-top: 50px;
+        border-style: solid;
+        opacity: 1.0;
+    }
+    .home_mostrador_calculadora_normal{
+        float: left;
+        position: absolute;
+        width: 304px; 
+        height: 45px;
+        margin-left: 460px;
+        margin-top: 2px;
+        margin-bottom: -32px;
+    }
+    .home_tabela td{
+    padding: 20px;
+    font-size: 50px;
+    border-collapse: collapse;
+    background-color: lightseagreen;
+}
+.home_mostrador_calculadora_normal{
+    border-style: solid;
+    border-radius: 10px;
+    overflow-y: unset;
+    background-color:white;
+    opacity: 0.9;
+    font-size: 45px;
+}
+table, th, td {
+    border: 2px solid black;
+    border-radius: 10px;
+  }
+    </style>
+</head>
+<body>
+
+        <table class="home_tabela">
+                    
+                <span class="home_mostrador_calculadora_normal"><label id="mostrador"></label> </span>
+                    
+                <tr>
+                    <td onclick="um()">1</td>
+                    <td onclick="dois()">2</td>
+                    <td onclick="tres()">3</td>
+                    <td onclick="mais()" style="text-align: center;">+</td>
+                </tr>
+                <tr>
+                    <td onclick="quatro()">4</td>
+                    <td onclick="cinco()">5</td>
+                    <td onclick="seis()">6</td>
+                    <td onclick="menos()" style="text-align: center;">-</td>
+                </tr>
+                <tr>
+                    <td onclick="sete()">7</td>
+                    <td onclick="oito()">8</td>
+                    <td onclick="nove()">9</td>
+                    <td onclick="vezes()" style="text-align: center;">x</td>
+                </tr>
+                <tr>
+                    <td onclick="zero()">0</td>
+                    <td onclick="virgula()" style="text-align: center;">.</td>
+                    <td onclick="igual()" style="text-align: center;">=</td>
+                    <td onclick="divisao()" style="text-align: center;">%</td>
+                </tr>
+            </table>
+        
+        </div>
+    
+</body>
+</html>
+
+<script>
+    mostrador.innerHTML = '';
+    var conta = 0;
+
+    function igual() {
+        var x = document.getElementById("mostrador").textContent;
+        var y = Number(x);
+        var z = Number(10);
+        // document.getElementById("demo").innerHTML = x;
+        alert(`${y}`);  
+    }
+
+    function um(){
+        mostrador.innerHTML += '1';   
+        conta ++;
+    }
+
+    function dois(){
+        mostrador.innerHTML += '2';   
+        conta += 2;
+    }
+    function tres(){
+        mostrador.innerHTML += '3';   
+        conta += 3;
+    }
+    function quatro(){
+        mostrador.innerHTML += '4';   
+    }
+    function cinco(){
+        mostrador.innerHTML += '5';
+    }
+    function seis(){
+        mostrador.innerHTML += '6';   
+    }
+    function sete(){
+        mostrador.innerHTML += '7';   
+    }
+    function oito(){
+        mostrador.innerHTML += '8';   
+    }
+    function nove(){
+        mostrador.innerHTML += '9';   
+    }
+    function zero(){
+        mostrador.innerHTML += '0';   
+    }
+    function menos(){
+        mostrador.innerHTML += '-';
+    }
+</script>

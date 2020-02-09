@@ -1,0 +1,222 @@
+
+/* Caso esteja no vs code navegue através da miniatura visível na lateral
+direita da tela, canto superior, usando os comentários como referência
+onde:
+- o primeiro é sobre a estilização compartilhada de todas as páginas;
+- o segundo é sobre a estilização das caixas dentro do conteúdo presente na página index;
+- o terceiro é sobre a estilização das caixas dentro do conteúdo presente na página login;
+- o quarto é sobre a estilização das caixas dentro do conteúdo presente na página cadastro;
+- o quinto é sobre a estilização das caixas dentro e fora do conteúdo presente na página home;
+- o sexto é sobre a estilização das caixas dentro e fora do conteúdo presente na página home cadastrados.
+ */
+
+
+
+
+
+
+/* estilização padrão de todas as páginas */
+
+
+
+body{
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+a{
+    color: black;
+    text-decoration: none;
+}
+.imagem{
+    background-image: url(imagem-fundo.jpg);
+}
+.barra_superior{
+    background-color: aqua;
+    border: solid;
+    border-top-color: aqua;
+    border-bottom-right-radius: 15px;
+}
+
+.barra_inferior{
+    background-color: aqua;
+    border: solid;
+    border-bottom-color: aqua;
+    border-left-color: aqua;
+    border-top-right-radius: 15px;
+}
+.tipo_botao {
+    font-size: 20px;
+    border-style: solid;
+    border-radius: 10000000px;
+    border-top-color: midnightblue;
+    border-left-color: mediumblue;
+    border-right-color: mediumblue;
+    border-bottom-color: midnightblue;
+    background-color: white;
+}
+
+.tipo_botao a:hover{
+    color: aqua;
+    
+}
+.tipo_caixa_meio{
+    border-style: solid;
+    border-radius: 100px;
+    background-color:aqua;
+}
+
+
+
+
+/* estilização das caixas e texto da página index  */
+
+
+
+
+.caixa_meio h1{
+    text-align: center;
+}
+.caixa_meio h2{
+    text-align: center;
+}
+.caixa_meio p{
+    text-align: center;
+}
+
+
+
+
+
+/* estilização das caixas e textos da página login */
+
+
+
+
+
+/* estilização das caixas e textos da página cadastro */
+
+
+
+
+
+
+
+.cadastro_caixa_meio{
+    opacity: 1.0;
+}
+
+
+
+
+/* estilização das caixas e textos da página home */
+
+
+
+
+
+.home_caixa_meio h1{
+    text-align: center;
+}
+.home_caixa_meio h3{
+    text-align: center;
+}
+
+.calculadora_normal span:hover{
+    color: aqua;
+}
+
+.calculadora_cientifica span:hover{
+    color: aqua;
+}
+.home_caixa_meio{
+    opacity: 0.9;
+}
+
+.home_caixa_normal{
+    background-color: white;
+    opacity: 0.9;
+}
+
+.home_caixa_normal h1{
+    text-align: center;
+    font-size: 60px;
+}
+.home_caixa_normal span{
+    margin-left: 10px;
+    font-size: 16px;
+}
+
+.home_caixa_cientifica{
+    background-color: white;
+    opacity: 0.9;
+}
+
+.escolha_cientifica{
+    border-radius: 10px;
+    font-size: 20px;
+    color: white;
+}
+
+.escolha_cientifica:hover{
+    color: aqua;
+}
+
+.caixa_escolhida_cientifica{
+    display: none;
+}
+
+
+.resultado_potencia{
+    overflow-x: auto;
+    overflow-y: auto;
+}
+
+.resultado_porcentagem{
+    font-size: 70px;
+}
+
+.resultado_regra_tres{
+    font-size: 80px;
+}
+/* estilização das caixas e textos da página home cadastrados*/
+
+
+
+
+
+.cadastrado_calculadora span:hover{
+    color: aqua;
+    
+}
+
+.cadastrado_matematica span:hover{
+    color: aqua;
+}
+
+.cadastrado_fisica span:hover{
+    color: aqua;
+}
+
+.cadastrado_quimica span:hover{
+    color: aqua;
+}
+
+.home_cadastrado_tipo_caixa{
+    background-color: white;
+    opacity: 0.9;
+}
+
+
+.home_cadastrado_tipo_caixa h1{
+    text-align: center;
+}
+.home_cadastrado_tipo_caixa span{
+    margin-left: 15px;
+    font-size: 16px;
+}
+
+.cadastrado_escolha:hover{
+    color: aqua;
+}
+

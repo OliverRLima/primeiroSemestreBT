@@ -1,0 +1,227 @@
+<!-- Exercício 1 -->
+
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    Insira a sua altura : <input id="altura" onkeyup="ver()">
+    <div id="divi"></div>
+
+</body>
+</html>
+
+<script>
+    function ver(){
+        divi.innerHTML = '';
+        var valor_altura = Number(altura.value);
+
+        if(valor_altura > 1.80){
+            divi.innerHTML = 'Você pode ser jogador de volei ou basquete'; 
+        } else if (valor_altura <= 1.65){
+            divi.innerHTML = 'Você pode ser piloto de corrida';
+        } else {
+            divi.innerHTML = 'Você pode ser jogador de futeb'
+        }
+    }
+</script>
+
+
+<!-- Exercício 2 -->
+
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    Insira a renda familiar mensal : <input id="renda" onkeyup="ver()">
+    <div id="divi"></div>
+</body>
+</html>
+
+<script>
+    function ver() {
+        divi.innerHTML = '';
+        var valor_renda = Number(renda.value);
+
+        if(valor_renda > 9500){
+            divi.innerHTML = 'Classe A';
+        } else if (valor_renda > 2500){
+            divi.innerHTML = 'Classe B';
+        } else if (valor_renda > 900) {
+            divi.innerHTML = 'Classe C';
+        } else if (valor_renda > 250){
+            divi.innerHTML = 'Classe D';
+        } else {
+            divi.innerHTML = 'Classe E';
+        }
+    }
+</script>
+
+
+<!-- Exercício 3 -->
+
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    Insira a sua altura : <input id="altura" onkeyup="ver()">
+    <div id="divi" style="color:"></div>
+
+</body>
+</html>
+
+<script>
+    function ver(){
+        divi.innerHTML = '';
+        var valor_altura = Number(altura.value);
+        var cor = '';
+
+        if(valor_altura > 1.80){
+            cor = 'orange';
+            divi.innerHTML = 'Você pode ser jogador de volei ou basquete'; 
+            divi.style.color = cor;
+        } else if (valor_altura <= 1.65){
+            cor = 'green';
+            divi.innerHTML = 'Você pode ser piloto de corrida';
+            divi.style.color = cor;
+        } else {
+            cor = 'blue';
+            divi.innerHTML = 'Você pode ser jogador de futebol';
+            divi.style.color = cor;     
+        }
+    }
+</script>
+
+
+<!-- Exercício 4 -->
+
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    Qual o saldo da sua conta no banco: <input id="saldo"> 
+    <br>
+    
+    <button onclick="verificar()">Verificar finanças</button>
+    
+    <div id="divi"></div>
+
+</body>
+</html>
+
+<script>
+    function verificar() {
+        divi.innerHTML = '';
+        valor_saldo = Number(saldo.value);
+        var cor = '';
+
+        if(valor_saldo < -1000) {
+            cor = 'red';
+            divi.innerHTML = `Está devendo! <br>`;
+            divi.style.color = cor;
+            divi.innerHTML += `Igual ao Corinthians: No SERASA!`;
+        }        
+        else if(valor_saldo < 0){
+            cor = 'red';
+            divi.innerHTML = `Está devendo!`;
+            divi.style.color = cor;
+        }else if(valor_saldo == 0){
+            cor = 'black';
+            divi.innerHTML = `Conta zerada`;
+            divi.style.color = cor;
+        } else {
+            cor = 'blue';
+            divi.innerHTML = `Saldo positivo! : R$${valor_saldo.toFixed(2)}`;
+            divi.style.color = cor;
+        }
+    }
+</script>
+
+
+<!-- Exercício 5 -->
+
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    Insira a temperatura : <input id="temperatura" onkeyup="ver()">
+    <div id="divi"></div>
+</body>
+</html>
+
+<script>
+    function ver(){
+        divi.innerHTML = '';
+        var valor_temperatura = Number(temperatura.value);
+
+        if(valor_temperatura > 31){
+            divi.innerHTML = 'Calor escaldante';
+        } else if (valor_temperatura > 24){
+            divi.innerHTML = 'Com Calor';
+        } else if (valor_temperatura > 21){
+            divi.innerHTML = 'Confortável';
+        } else if (valor_temperatura > 14){
+            divi.innerHTML = 'Com Frio';
+        } else {
+            divi.innerHTML = 'Congelante';
+        }
+    }
+</script>
+
+
+<!-- Exercício 6 -->
+
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    insira o peso da criança: <input id="peso" onkeyup="ver()">
+    <div id="divi"></div>
+</body>
+</html>
+
+<script>
+    function ver(){
+        divi.innerHTML = '';
+        var valor_peso = Number(peso.value);
+
+        if(valor_peso > 21.2){
+            divi.innerHTML = 'Acima do peso';
+        } else if (valor_peso == 18.3){
+            divi.innerHTML = 'Peso perfeito';
+        } else if (valor_peso > 13.5){
+            divi.innerHTML = 'Peso na média';
+        } else {
+            divi.innerHTML = 'Abaixo do peso';
+        }
+    }
+</script>

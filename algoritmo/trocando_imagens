@@ -1,0 +1,930 @@
+<!-- Lembrando que as src's das imagens presentes aqui foram as de momento, então tem que baixar imagens
+novamente e colocar seu nomes nos lugares certos para rodas o código -->
+
+<!-- exercício 1-->
+
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>exercício 1</title>
+</head>
+<body>
+    <h2>Mudando emoções</h2>
+
+    <img id="rosto" src="normal.jpg" alt="um rosto calmo"> <br>
+
+    <button onclick="sorrir()">Ficar Feliz</button>
+</body>
+</html>
+
+<script>
+     function sorrir(){
+         rosto.src = 'feliz.jpg';
+     } 
+</script>
+
+
+<!-- exercício 2>
+
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Exercício 2</title>
+</head>
+<body>
+    <h2>Prevendo o futuro</h2> <br>
+
+    <img src="dinheiro-voando.jpg" alt="um desenho de alguem sem dinheiro"> <br>
+
+    Quanto dinheiro terá em 6 meses ? <input id="seis_meses"> <br>
+    Quanro dinheiro terá em 3 anos ? <input id="tres_anos"> <br>
+
+    <button onclick="prever()">Como estarei no futuro ?</button>
+
+
+
+    <div id="segunda_foto" style="display: none">
+        <img src="algum-dinheiro.jpg" alt="um desenho de alguem com algum dinheiro">
+        Você irá ter R$ <span id="dinheiro_seis_meses"></span>.
+    </div>
+
+
+          <br>
+          <br>
+
+
+    <div id="terceira_foto" style="display: none">
+        <img src="muito-dinheiro.jpg" alt="um desenho de alguem com muito dinheiro">
+        Você irá ter R$ <span id="dinheiro_tres_anos"></span>.
+    </div>
+</body>
+</html>
+
+
+<script>
+    function prever(){
+        
+        segunda_foto.style.display = 'block';
+        dinheiro_seis_meses.innerHTML = seis_meses.value;
+
+        terceira_foto.style.display = 'block';
+        dinheiro_tres_anos.innerHTML = tres_anos.value;
+    
+    }
+</script>
+
+<!-- exercício 3 -->
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    Informe sua nota: <input id="nota">
+    <br>
+    <button onclick="avo()">Opinião da Avó</button> 
+    
+    <button onclick="mae()">Opinião da mãe</button>
+</body>
+</html>
+
+<script>
+    function avo(){
+        alert(`Muito bem, que neto inteligente, porque tirou ${nota.value}`);
+    }
+
+    function mae(){
+        alert(`Não fez mais que tua obrigação com essa nota ${nota.value}`);
+    }
+</script>
+
+<!-- exercício 4 -->
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    insira um número: <input id="numero_um"><br>
+
+    insira outro número: <input id="numero_dois"><br>
+
+    <button onclick="somar()">Somar</button>
+    <button onclick="subtrair()">Subtrair</button>
+    <button onclick="multiplicar()">Multiplicar</button>
+    <button onclick="dividir()">Dividir</button>
+
+     <div id="div_mensagem" style="display: none">
+        O resultado é : <span id="resultado"></span>
+    </div>
+</body>
+</html>
+
+<script>
+    function somar() {
+        adicao = Number(numero_um.value) + Number(numero_dois.value);
+        resultado.innerHTML = `A soma entre ${numero_um.value} e ${numero_dois.value} é ${adicao}`;
+        div_mensagem.style.display = 'block';
+    }
+
+    function subtrair() {
+        subtração = Number(numero_um.value) - Number(numero_dois.value);
+        resultado.innerHTML = `A diferença entre ${numero_um.value} e ${numero_dois.value} é ${subtração}`;
+        div_mensagem.style.display = 'block';
+    }
+
+    function multiplicar() {
+        multiplicação = Number(numero_um.value) * Number(numero_dois.value);
+        resultado.innerHTML = `O produto entre ${numero_um.value} e ${numero_dois.value} é ${multiplicação}`;
+        div_mensagem.style.display = 'block';
+    }
+    
+    function dividir() {
+        divisão = Number(numero_um.value) / Number(numero_dois.value);
+        resultado.innerHTML = `A razão entre ${numero_um.value} e ${numero_dois.value} é ${divisão}`;
+        div_mensagem.style.display = 'block';
+    }
+</script>
+
+<!-- exercício 6 -->
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="felicidade()">Feliz</button> 
+    <button onclick="neutralidade()">Neutro</button>
+    <button onclick="tristeza()">Triste</button> 
+    <button onclick="pistolar()">Pistola</button> <br>
+
+    <div id="div_mensagem" style="display: none">
+        <img id="foto" src="interrogação.png" alt="um rosto expressando emoção">
+    </div>
+</body>
+</html>
+
+<script>
+    function felicidade() {
+        foto.src = 'feliz.jpg';
+        div_mensagem.style.display = 'block';
+    }
+
+    function neutralidade() {
+        foto.src = 'normal.jpg';
+        div_mensagem.style.display = 'block';
+    }
+
+    function tristeza() {
+        foto.src = 'triste.png';
+        div_mensagem.style.display = 'block';
+    }
+
+    function pistolar() {
+        foto.src = 'raiva.png';
+        div_mensagem.style.display = 'block';
+    }
+
+</script>
+
+<!-- exercício 7 -->
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    Insira a sua altura: <input id="altura" autofocus> <br>
+    Insira o seu peso: <input id="peso"> <br>
+
+    <button onclick="H_calcular()">IMC Homem</button>
+    <button onclick="M_calcular()">IMC Mulher</button>
+
+    <div id="div_mensagem" style="display: none;">
+        Seu Peso ideal é de <span id="peso_ideal"></span>
+
+    </div>
+</body>
+</html>
+
+<script>
+     
+    function H_calcular () {
+        var IMC = Number(peso.value) / (Number(altura.value) * Number(altura.value));
+        peso_ideal.innerHTML = `${IMC.toFixed(2)} Kg`
+        div_mensagem.style.display = 'block';
+    }
+    
+    function M_calcular () {
+        var IMC = (Number(peso.value) / (Number(altura.value) * Number(altura.value))) * 0.9;
+        peso_ideal.innerHTML = `${IMC.toFixed(2)} Kg`
+        div_mensagem.style.display = 'block';
+    }
+</script>
+
+<!-- exercício 8 -->
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    Insira a sua nota: <input id="nota"> <br>
+
+    <button onclick="avo ()">Opinião da avó</button>
+    <button onclick="mae ()">Opinião da mãe</button>
+
+    <div id="div_mensagem" style="display: none;">
+        <span id="comentario"></span> <br>
+        <img id="foto" src="" alt="">
+
+    </div>
+</body>
+</html>
+
+<script>
+    function avo () {
+        comentario.innerHTML = `Muito bem, que neto inteligente, porque tirou ${nota.value}`;
+        foto.src = 'avo.jpg';
+        foto.alt = 'Desenho de uma avó feliz';
+        div_mensagem.style.display = 'block';
+    }
+    function mae () {
+        comentario.innerHTML = `Não fez mais que tua obrigação com essa nota ${nota.value}`;
+        foto.src = 'mae.jpg';
+        foto.alt = 'Desenho de uma mãe nervosa';
+        div_mensagem.style.display = 'block';
+    }
+</script>
+
+<!-- exercício 9 -->
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="palmeiras()">Palmeiras</button>
+    <button onclick="corinthians()">Corinthians</button>
+    <button onclick="santos()">Santos</button>
+    <button onclick="saopaulo()">São Paulo</button>
+
+    <br>
+
+    <img id="foto" src="" alt="">
+</body>
+</html>
+
+<script>
+    function palmeiras(){
+        foto.src='palmeiras.jpg';
+        foto.alt='Escudo do palmeiras';
+    }
+
+    function corinthians(){
+        foto.src='corinthians.jpg';
+        foto.alt='Escudo do corinthians';
+    }
+
+    function santos(){
+        foto.src='santos.jpg';
+        foto.alt='Escudo do santos';
+    }
+
+    function saopaulo(){
+        foto.src='saopaulo.jpg';
+        foto.alt='Escudo do são paulo';
+    }
+</script>
+
+<!-- exercício 10 -->
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    Insira o valor do seu salário: <input id="bruto" autofocus> <br>
+    Insira o valor da mesada de seu filho: <input id="mesada"> <br>
+    Insira o valor do abono de Natal: <input id="abono"> <br>
+    <button onclick="calcular()">Calcular saldo</button>
+</body>
+</html>
+
+<script>
+  function calcular() {
+      var salario_liquido = Number(bruto.value);
+      
+      // calculando a perca em relação a mesada
+      salario_liquido -= Number(mesada.value);
+
+      // calculando o ganho pelo abono de natal
+      salario_liquido += Number(abono.value);
+
+      alert(`O seu salário liquido é de R$ ${(salario_liquido).toFixed(2)}`);
+  }
+</script>
+
+<!-- exercício 11 -->
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    Insira o valor do cateto oposto: <input id="cat_oposto" autofocus> <br>
+    Insira o valor do cateto adjacente: <input id="cat_adjacente"> <br>
+    <button onclick="calcular()">Calcular hipotenusa</button>
+
+</body>
+</html>
+
+<script>
+    function calcular() {
+        var hipotenusa = Number(cat_oposto.value) ** 2;
+
+        // calculando a potência do cateto adjacente somado a potência do cateto oposto
+        hipotenusa += (Number(cat_adjacente.value) ** 2);
+
+        // calculando a raiz da soma das potências dos catetos
+        var resultado =  hipotenusa ** (0.5);
+
+        alert(`O valor da hipotenusa é de ${(resultado).toFixed(2)}`);
+    }
+
+</script>
+
+<!-- exercício 12 -->
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    Insira o valor do salário do irmão de Igor: <input id="salario_irmao_igor" autofocus><br>
+    Insira a quantidade de ficantes do irmão de Igor: <input id="ficantes_irmao_igor"> <br>
+    Insira a quantidade de foras que o irmão de Igor levou: <input id="foras_irmao_igor"> <br>
+    <button onclick="calcular()">Meta de Igor</button>
+</body>
+</html>
+
+<script>
+    function calcular () {
+        var salario_igor = Number(salario_irmao_igor.value);
+        var ficantes_igor = Number(ficantes_irmao_igor.value);
+        var foras_igor = Number(foras_irmao_igor.value);
+
+        // calculando o salário de Igor
+        salario_igor *= 1.1;
+        alert(`O salário de Igor será de ${(salario_igor).toFixed(2)}`);
+
+        // calculando o número de ficantes de Igor
+        ficantes_igor ++;
+        alert(`O número de ficantes de Igor será de ${ficantes_igor}`);
+
+        // calculando o número de foras de igor
+        foras_igor --;
+        alert(`O número de foras de Igor será de ${foras_igor}`);
+    }
+</script>
+
+<!-- exercício 14 -->
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    Insira o seu salário: <input id="salario"> <br>
+
+    <button onclick="confirmar()">Confirmar salário</button>
+    <button onclick="pagar100()">Pagar conta de 100</button>
+    <button onclick="pagar500()">Pagar conta de 500</button>
+    <button onclick="ganhar()">Ganhar 2000 na loteria</button>
+
+    <div id="divizinha" style="display: none">
+        Grana atual: R$<span id="mensagem">0</span>
+    </div>
+</body>
+</html>
+
+<script>
+    var grana;
+    function confirmar() {
+        grana = Number(salario.value);
+        mensagem.innerHTML = `${grana}`;
+        divizinha.style.display = 'block';
+    }
+
+    function pagar100 () {
+        grana -= 100;
+        mensagem.innerHTML = `${grana}`;
+        divizinha.style.display = 'block';
+    }
+
+    function pagar500 () {
+        grana -= 500;
+        mensagem.innerHTML = `${grana}`;
+        divizinha.style.display = 'block';
+    }
+
+    function ganhar () {
+        grana += 2000;
+        mensagem.innerHTML = `${grana}`;
+        divizinha.style.display = 'block';
+    }
+    
+</script>
+
+<!-- exercício 15-->
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div style="color: blue" >
+        Total guardado no cofrinho: R$ <u id="cofrinho">0.00</u> <br>
+        Depósitos efetuados: <u id="depositos">0</u>
+    </div>
+
+    <button onclick="cinquenta()">Depositar 0,50</button>
+    <button onclick="dois()">Depositar 2,00</button>
+</body>
+</html>
+
+<script>
+    var no_cofre = 0; 
+    var depositei = 0;
+
+    function cinquenta () {
+        no_cofre += 0.5;
+        depositei ++;
+        cofrinho.innerHTML = `${no_cofre}`;
+        depositos.innerHTML = `${depositei}`;
+    }
+
+    function dois () {
+        no_cofre += 2;
+        depositei ++;
+        cofrinho.innerHTML = `${no_cofre}`;
+        depositos.innerHTML = `${depositei}`;
+    }
+</script>
+
+<!-- exercício 16 -->
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div style="color: green" >
+        Votos na <u>Praça é Nossa</u>: <b id="na_praca">0</b> <br>
+        Votos na <u>Zorra total</u>: <b id="na_zorra">0</b> <br>
+        Total de votos: <b id="votacao">0</b> <br>
+    </div>
+
+    <button onclick="votei_praca()">Votar na Praça é Nossa</button>
+    <button onclick="votei_zorra()">Votar na Zorra Total</button>
+</body>
+</html>
+
+<script>
+    var votos_na_praca = 0;
+    var votos_na_zorra = 0; 
+    var votos_totais = 0;
+
+    function votei_praca () {
+        votos_na_praca ++;
+        votos_totais ++;
+
+        na_praca.innerHTML = votos_na_praca;
+        votacao.innerHTML = votos_totais;
+    }
+
+    function votei_zorra () {
+        votos_na_zorra ++;
+        votos_totais ++;    
+
+        na_zorra.innerHTML = votos_na_zorra;
+        votacao.innerHTML = votos_totais;
+    }
+</script>
+
+<!-- Exercício 17 -->
+
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <img onclick="votar_eddie()" src="eddie.jpg" alt="imagem do cantor do Pearl Jam, Eddie Vedder">
+    Votos: <b id="eddinho">0</b>
+
+    <br>
+
+    <img onclick="votar_kurt()" src="kurt.jpg" alt="imagem do falecido cantor do Nirvana, Kurt Cobain">
+    Votos: <b id="kurtinho">0</b>
+
+    <br>
+    Total de votos: <b id="votacao">0</b>
+</body>
+</html>
+
+<script>
+    var votos_eddie = 0;
+    var votos_kurt = 0;
+    var votos_totais = 0;
+
+    function votar_eddie() {
+        votos_eddie ++;
+        votos_totais ++;
+
+        eddinho.innerHTML = `${votos_eddie}`;
+        votacao.innerHTML = `${votos_totais}`;
+    }
+
+    function votar_kurt() {
+        votos_kurt ++;
+        votos_totais ++;
+
+        kurtinho.innerHTML = `${votos_kurt}`;
+        votacao.innerHTML = `${votos_totais}`;
+    }
+</script>
+
+<!-- Exercício 18 -->
+
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="aumentar()">Aumentar a largura</button>
+    <button onclick="reduzir()">Reduzir a altura</button>
+    <br>
+    <img id="eddinho" src="eddie.jpg" alt="" style="width: 300px; height: 300px;">
+</body>
+</html>
+
+<script>
+    var tamanho = 300;
+
+    function aumentar () {
+        tamanho += 10;
+
+        eddinho.style.width = `${tamanho}px`;
+    }
+
+    function reduzir () {
+        tamanho -= 10;
+
+        eddinho.style.height = `${tamanho}px`; 
+    }
+</script>
+
+<!-- Exercício 19 -->
+
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="direita()">Mover p/ Esquerda</button>
+    <button onclick="esquerda()">Mover p/ Direita</button>
+    Quantos pixels: <input id="numero_pixels">
+    
+    <br>
+    <br>
+
+    <img id="fotinha" src="bart.jpg" alt="personagem Bart, do desenho Os simpsons, andando de skate" style="margin-left: 0px;">
+</body>
+</html>
+
+<script>
+    var mover_direita = 0;
+    
+    function direita () {
+    var pixels = Number(numero_pixels.value);
+    mover_direita -= pixels;
+    fotinha.style.marginLeft = `${mover_direita}px`;
+    }
+
+    function esquerda () {
+    var pixels = Number(numero_pixels.value);
+    mover_direita += pixels;
+    fotinha.style.marginLeft = `${mover_direita}px`;
+    }
+</script>
+
+<!-- Exercício 20 -->
+
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <select id="mercado">
+        <option>- Selecione o item desejado -</option>
+        <option value="2.00">Bolacha</option>
+        <option value="7.00">Batata</option>
+        <option value="0.25">Chiclete</option>
+        <option value="0.10">Bala</option>
+    </select>
+    
+    <button onclick="ver()">ver preço</button>
+</body>
+</html>
+
+<script>
+    function ver () {
+        alert(`Isso custa R$${mercado.value}`);
+    }
+</script>
+
+<!-- Exercício 21 -->
+
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <select  id="oracao">
+        <option value="que eu leve o amor">Onde houver ódio</option>
+        <option value="que eu leve esperança">Onde houver desespero</option>
+        <option value="que eu leve o perdão">Onde há ofensa que dói</option>
+    </select>
+
+    <button onclick="orar()">Fazer oração</button>
+</body>
+</html>
+
+<script>
+    function orar () {
+        alert(`${oracao.value}`)
+    }
+</script>
+
+<!-- Exercício 22 -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <select id="time">
+        <option value="corinthians.png">Corinthians</option>
+        <option value="saopaulo.png">São Paulo</option>
+        <option value="santos.png">Santos</option>
+        <option value="palmeiras.png">Palmeiras</option>
+    </select>
+
+    <button onclick="ver()">Ver escudo</button>
+    <br>
+
+    <img id="fotinha" src="" alt="">
+</body>
+</html>
+
+<script>
+    function ver () {
+        fotinha.src = `${time.value}`;
+    }
+</script>
+
+<!-- Exercício 23 -->
+
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+     <h1>Sistema de atendimento</h1>
+
+     <select id="escolha">
+         <option value="1">1 estrela</option>
+         <option value="2">2 estrelas</option>
+         <option value="3">3 estrelas</option>
+         <option value="4">4 estrelas</option>
+         <option value="5">5 estrelas</option>
+     </select>
+
+     <button onclick="confirmar()">Confirmar avaliação</button> <br>
+
+     Média atual: <b id="mediando">0</b> estrelas <br>
+     Numero de avaliações: <b id="avaliacoes">0</b> <br>
+
+</body>
+</html>
+
+<script>
+    var numero_votos = 0;
+    //var media_intermediaria = 0;
+    var media_final = 0;
+
+    function confirmar () {
+       // Os códigos comentados são uma outra versão, caso 
+       // queira utilizar ele comente o segundo código e descomente o primeiro
+
+        // 1º versão
+        
+        //numero_votos ++;
+        //var media = Number(escolha.value);
+        //media_intermediaria += media;
+        //media_final = media_intermediaria / numero_votos;
+    
+        //mediando.innerHTML = `${media_final}`;
+        //avaliacoes.innerHTML = `${numero_votos}`; 
+     
+        // 2º versão
+       
+        numero_votos ++;
+        var media = Number(escolha.value);
+        media_final += media;
+    
+        mediando.innerHTML = `${(media_final / numero_votos).toFixed(2)}`;
+        avaliacoes.innerHTML = `${numero_votos}`; 
+    
+    }
+</script>
+
+<!-- Exercício 24 -->
+
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    Digite seu salário: <input id="salario">
+    <br>
+    <select id="descontos">
+        <option value="0.1">INSS</option>
+        <option value="0.2">IR</option>
+        <option value="0.05">VT</option>
+    </select>
+
+    <button onclick="ver()">Ver desconto</button>
+    
+    <div id="divizinha" style="display: none">
+        Valor desse desconto: R$ <span id="valor"></span>
+    </div>
+</body>
+</html>
+
+<script>
+    function ver () {
+          var conta = Number(salario.value) * Number(descontos.value); 
+          valor.innerHTML = `${conta.toFixed(2)}`;
+          divizinha.style.display = 'block';
+    }
+</script>
+
+<!-- Exercício 25 -->
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <img id="fotinha" src="interrogacao.png" alt="um ponto de interrogação desenhado" style="height: 200px;"> <br>
+    
+    <select id="tamanho">
+        <option value="0">Normal</option>
+        <option value="50">Grande</option>
+        <option value="300">Enorme</option>
+        <option value="-50">Pequeno</option>
+        <option value="-100">Minúsculo</option>
+    </select>
+    
+    <button onclick="ver()">Redimensionar imagem</button>
+
+</body>
+</html>
+
+<script>
+
+    function ver () {
+        var pxs = 200 + Number(tamanho.value);
+        fotinha.style.height = `${pxs}px`;
+    }
+</script>
+
+
+<!-- Exercício 26 -->
+
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    Total guardado: <b id="total">R$0.00</b> <br>
+    Operações efetuadas: <b id="operacoes">0</b> <br>
+
+    <select id="valores">
+        <option value="0.25">Depositar R$0,25</option>
+        <option value="0.50">Depositar R$0,50</option>
+        <option value="1.00">Depositar R$1,00</option>
+        <option value="2.00">Depositar R$2,00</option>
+        <option value="-1.00">Tirar R$1,00</option>
+        <option value="-2.00">Tirar R$2,00</option>
+    </select>
+
+    <button onclick="confirmar()">Confirmar operação</button>
+</body>
+</html>
+
+<script>
+    var total_cofrinho = 0;
+    var total_operacoes = 0;
+
+    function confirmar() {
+        total_operacoes ++;
+        var conta = Number(valores.value);
+        total_cofrinho += conta ;
+    
+        total.innerHTML = `${(total_cofrinho).toFixed(2)}`;
+        operacoes.innerHTML = `${total_operacoes}`;
+    }
+</script>

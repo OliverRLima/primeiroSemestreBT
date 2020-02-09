@@ -1,0 +1,659 @@
+<!-- Exercício 1-->
+
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+    <button onclick="contando()">Contar</button>
+
+    <div id="divi"></div>
+</body>
+</html>
+
+<script>
+    function contando () {
+        var contagem = 1 ;
+        
+        divi.innerHTML = '';
+
+        while(contagem < 16){
+            divi.innerHTML += `${contagem}<br>`;
+            contagem++;
+        }
+    }
+</script>
+
+<!-- Exercício 2 -->
+
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="par()">S2 Pares</button>
+    <div id="divi"></div>
+</body>
+</html>
+
+<script>
+    function par(){
+        contador = 2;
+
+        while(contador < 102){
+            divi.innerHTML += `${contador} <br>`;
+            contador+= 2;
+        }
+    }
+</script>
+
+<!-- Exercício 3 -->
+
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    digite um número: <input id="numero"> <br> 
+    digite uma frase: <input id="frase"> <br>
+
+    <button onclick="contar()">Papagaio</button>
+    <div id="divi"></div>
+</body>
+</html>
+
+<script>
+    function contar(){
+        var valor_numero = Number(numero.value);
+        var contador = 0;
+        divi.innerHTML = '';
+
+        while(contador < valor_numero){
+            divi.innerHTML += `${frase.value} <br>`;
+            contador ++;
+        }
+        
+    }
+</script>
+
+<!-- Exercício 4 -->
+
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="ver()">Números cabalísticos</button>
+
+    <div id="divi"></div>
+</body>
+</html>
+
+<script>
+    function ver(){
+        var contador = 0;
+        divi.innerHTML = '';
+        
+        while(contador <= 15){
+            
+            divi.innerHTML += `${contador} <br>`;
+            contador++;
+            
+            if(contador == 3 || contador == 4 || contador == 7 || contador == 10 || contador == 12){
+                contador++;                    
+            }
+        }
+    }
+</script>
+
+<!-- Exercício 5 -->
+
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    Quantos títulos mundiais seu clube têm: <input id="mundial"> <br>
+    <button onclick="ver()">Ver troféus de mundiais FIFA</button>
+
+    <div id="divi"></div> 
+</body>
+</html>
+
+<script>
+    function ver () {
+        var valor_mundiais = Number(mundial.value);
+        var contador = 1;
+        divi.innerHTML = '';
+
+        if(valor_mundiais > 0){
+           
+            while(contador <= valor_mundiais){
+                divi.innerHTML += '<img src="deubom.jpg" alt=""> <br>';
+                contador++;
+            }
+
+        } else {
+            divi.innerHTML = '<img src="deuruim.jpg" alt="">';
+        }
+    }
+</script>
+
+<!-- Exercício 6 -->
+
+
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+    Insira a quantidade de elefantes: <input id="elefantes"> <br>
+    <button onclick="atazanar()">Atazanar a médium</button>
+    <div id="divi"></div>
+
+</body>
+</html>
+
+<script>
+    function atazanar () {
+        var valor_elefantes = Number(elefantes.value);
+        var contador = 1;
+        divi.innerHTML = '';
+
+        while(contador < valor_elefantes){
+            var contagem = 0;
+            divi.innerHTML += '1 elefante incomoda muita gente <br>';
+            divi.innerHTML += `${contador + 1} elefantes `;
+            
+                while(contagem - 1 < contador){
+                    contagem ++;
+                    divi.innerHTML += `incomodam, `;   
+                }
+            divi.innerHTML += 'muito mais! <br> <br>';           
+            contador++; 
+        }
+    }
+</script>
+
+<!-- Exercício 7-->
+
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="multiplicar()">Adoro multiplicar por 5</button>
+    <div id="divi"></div>
+</body>
+</html>
+
+<script>
+    function multiplicar() {
+        var contagem = 0;
+
+        while(contagem <= 100){
+            divi.innerHTML += `${contagem} <br>`;
+            contagem += 5;
+        }
+    }
+</script>
+
+<!-- Exercício 8 --> 
+
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    Insira a quantidade de voltas que um carro
+    dará numa corrida: <input id="voltas"> <br>
+    
+    <button onclick="correr()">Iniciar corrida!</button>
+    <div>
+        <b id="voltando"></b>
+    </div>
+</body>
+</html>
+
+<script>
+    function correr(){
+        var valor_voltas = Number(voltas.value);
+        var contagem = 0;
+        voltando.innerHTML = '';
+
+        while(contagem + 1 <= valor_voltas){
+            contagem ++;
+            voltando.innerHTML += `Carro dando a ${contagem}ª volta <br>`;
+        }
+
+        voltando.innerHTML += 'Corrida finalizada!';
+    }
+</script>
+
+<!-- Exercício 9 -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+    Quantas pessoas vão entrar no carro? <input id="pessoas"> <br>
+    <button onclick="partir()">#Partiu Carona</button>
+    <div>
+        <b id="frase"></b>
+    </div>
+
+</body>
+</html>
+
+<script>
+    function partir() { 
+        var valor_pessoas = Number(pessoas.value);
+        var contador = 1;
+
+            if (contador == 1){
+                
+                frase.innerHTML += `Entrou o ${contador}º passageiro (que é o(a) motorista) <br> `;
+                contador++;
+            
+            }
+
+            if( contador > 1 && contador <= 5){
+                
+                while(contador <= 5){
+                    frase.innerHTML += `Entrou o ${contador}º passageiro <br>`;
+                    contador++;
+                
+                }
+
+            } 
+            if(contador > 5) {
+                while(contador <= valor_pessoas){
+                    
+                    frase.innerHTML += `O ${contador}ª passageiro terá que esperar! <br>`
+                    contador++;
+                }
+            }
+
+         }
+</script>
+
+<!-- Exercício 10 -->
+
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    Quantos ônibus precisa pegar? <input id="onibus"> <br>
+    Quantos trens precisa pegar? <input id="trens"> <br>
+    Quantos metrôs precisa pegar? <input id="metros"> <br>
+
+    <button onclick="partir()">#Partiu Trajeto</button>
+
+    <div>
+        <b id="buzao" style="color: red"></b> <br>
+        <b id="trem" style="color:green"></b> <br>
+        <b id="metro" style="color: blue"></b> <br>
+    </div>
+</body>
+</html>
+
+<script>
+    function partir(){
+        var valor_onibus = Number(onibus.value);
+        var valor_trem = Number(trens.value);
+        var valor_metro = Number(metros.value);
+        var contador = 1;
+        var contagem = 1;
+        var contando = 1;
+
+        while (contador <= valor_onibus){
+            buzao.innerHTML += `Pegando o ${contador}º buzão <br>`;
+            contador++;
+        }
+
+        while (contagem <= valor_trem){
+            trem.innerHTML += `Pegando o ${contagem}º trem <br>`;
+            contagem++;            
+        }
+
+        while (contando <= valor_metro){
+            metro.innerHTML += `Pegando o ${contando}º metrô <br>`;
+            contando++;
+            
+        }
+
+    }
+</script>
+
+<!-- Exercício 11 -->
+
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    Quantos ônibus precisa pegar? <input id="onibus"> <br>
+    Quantos trens precisa pegar? <input id="trens"> <br>
+    Quantos metrôs precisa pegar? <input id="metros"> <br>
+
+    <button onclick="partir()">#Partiu Trajeto</button>
+
+    <div>
+        <b id="buzao" style="color: red"></b> <br>
+        <b id="trem" style="color:green"></b> <br>
+        <b id="metro" style="color: blue"></b> <br>
+    </div>
+</body>
+</html>
+
+<script>
+    function partir(){
+        var valor_onibus = Number(onibus.value);
+        var valor_trem = Number(trens.value);
+        var valor_metro = Number(metros.value);
+        var contador = 1;
+        var contagem = 1;
+        var contando = 1;
+
+        while (contador <= valor_onibus){
+            buzao.innerHTML += `Pegando o ${contador}º buzão`;
+
+            if(contador == 1){
+                buzao.innerHTML += '<br>'
+            }
+            
+            if(contador == 2){
+                buzao.innerHTML += ' Começando a cansar <br>';
+            }
+
+            if(contador > 2){
+                buzao.innerHTML += ' Já cansado <br>';
+            }
+            contador++;
+        }
+
+        while (contagem <= valor_trem){
+            trem.innerHTML += `Pegando o ${contagem}º trem`;
+            
+            if(contagem == 1){
+                trem.innerHTML += '<br>'
+            }
+            
+            if(contagem == 2){
+                trem.innerHTML += ' Começando a cansar <br>';
+            }
+
+            if(contagem > 2){
+                trem.innerHTML += ' Já cansado <br>';
+            }
+            contagem++;            
+        }
+
+        while (contando <= valor_metro){
+            metro.innerHTML += `Pegando o ${contando}º metrô`;
+            
+            if(contando == 1){
+                metro.innerHTML += '<br>'
+            }
+            
+            if(contando == 2){
+                metro.innerHTML += ' Começando a cansar <br>';
+            }
+
+            if(contando > 2){
+                metro.innerHTML += ' Já cansado <br>';
+            }
+            contando++;
+            
+        }
+
+    }
+</script>
+
+
+<!-- Exercício 12 -->
+
+ <!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+    Quantas pessoas vão entrar no carro? <input id="pessoas"> <br>
+    Qual é a capacidade de passageiros que o veículo suporta? <input id="assentos"> <br>
+    <button onclick="partir()">#Partiu Carona</button>
+    <div>
+        <b id="frase"></b>
+    </div>
+
+</body>
+</html>
+
+<script>
+    function partir() { 
+        var valor_pessoas = Number(pessoas.value);
+        var valor_assentos = Number(assentos.value);
+        var contador = 1;
+        frase.innerHTML = '';
+            if (contador == 1){
+                
+                frase.innerHTML += `Entrou o ${contador}º passageiro (que é o(a) motorista) <br> `;
+                contador++;
+            
+            }
+
+            if( contador > 1 && contador <= valor_assentos){
+                
+                while(contador <= valor_assentos){
+                    frase.innerHTML += `Entrou o ${contador}º passageiro <br>`;
+                    contador++;
+                
+                }
+
+            } 
+            if(contador > valor_assentos) {
+                while(contador <= valor_pessoas){
+                    
+                    frase.innerHTML += `O ${contador}ª passageiro terá que esperar! <br>`
+                    contador++;
+                }
+            }
+
+         }
+</script>
+
+
+<!-- Exercício 13 -->
+<!-- Nesse exercício pense como se fosse duas partes:
+- A primeira parte é fazer com que apareça todos os valores de idade
+  de acordo com o desejado, ou seja, se a idade digitada for 35 vai ter que ter a sequência de 0 até 35;
+- A segunda parte é aparecer o comentário certo em cada valor de idade, então, só colocar os números para
+  passarem pelos if, como se tivesse catalogando eles;
+ -->
+  
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    Insira a sua idade: <input id="idade" onkeyup="contar()"> <br>
+    <div id="divi"></div>
+</body>
+</html>
+
+<script>
+
+    function contar() { 
+        var valor_idade = Number(idade.value);
+        var contador = 0;
+        divi.innerHTML = '';
+
+        while(contador <= valor_idade){
+           
+            divi.innerHTML += `${contador}`;
+           
+            if(contador <= 4){
+                divi.innerHTML += 'anos (primeira Infância) <br>';
+            }
+           
+            if(contador >4 && contador <=6){
+                divi.innerHTML += 'anos (Pré-escolar) <br>';
+            }
+           
+            if(contador >6 && contador <=10){
+                divi.innerHTML += 'anos (segunda Infância) <br>';
+            }
+           
+            if(contador > 10 && contador <=18){
+                divi.innerHTML += 'anos (Adolescência) <br>';
+            }
+           
+            if(contador >18 && contador <= 50){
+                divi.innerHTML += 'anos (Adulto) <br>';
+            }
+           
+            if(contador > 50 && contador <=100){
+                divi.innerHTML += 'anos (Melhor idade) <br>';
+            }
+           
+            if(contador > 100){
+                divi.innerHTML += 'anos (Matusalém) <br>';
+            }
+           
+            contador++;
+        }   
+    }
+</script>
+<!-- Exercício 14 -->
+
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="viver()">Viva o 7!</button> <br>
+    <div id="divi"></div>
+</body>
+</html>
+
+<script>
+    function viver() {
+        var contador = 0;
+
+        while(contador <= 100){
+            
+            if(contador % 7 == 0){
+                divi.innerHTML += `${contador} <br>`;
+                contador++;
+            }
+            contador++;
+        }
+    }
+</script>
+
+
+<!-- Exercício 15 -->
+
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="curtir()">Curto 3 e 5!</button>
+    <div id="divi"></div>
+</body>
+</html>
+
+<script>
+    function curtir(){
+        var contador = 0;
+        divi.innerHTML = '';
+
+        while(contador <= 100){
+            
+
+            divi.innerHTML += `${contador} <br>`;
+                contador++;
+
+            if(contador % 3 == 0 && contador % 5 == 0){
+                divi.innerHTML += `É TRI!É PENTA!<br> `;
+                contador++;
+            }
+
+            if(contador % 3 == 0){
+                divi.innerHTML += 'É TRI! <br>';
+                contador++;
+            }
+
+            if(contador % 5 == 0){
+                divi.innerHTML += 'É PENTA! <br>'
+                contador++;
+            }
+        }
+    }
+</script>

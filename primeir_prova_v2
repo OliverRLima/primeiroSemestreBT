@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Almoção top</title>
+</head>
+<body>
+    <!-- item 1 = cenouras -> 50g cada
+         item 2 = melões -> 150g cada
+         item 3 = Fatias de filé de peixe -> 30g cada 
+         item 4 = Alfaces -> 15g cada 
+    -->
+    
+
+    <h3>quanto custa cada item ?</h3>
+    Item 1: <input id="item_1" autofocus> Item 2: <input id="item_2"><br>
+    Item 3: <input id="item_3"> Item 4: <input id="item_4"><br>
+
+    <h3>quantas unidades irá comprar de cada item ?</h3>
+    Item 1: <input id="unidades_1"> Item 2: <input id="unidades_2"><br>
+    Item 3: <input id="unidades_3"> Item 4: <input id="unidades_4"><br>
+
+    <button onclick="calcular()">#Partiu feira</button>
+    
+    <br><br>
+    
+    <div id="div_mensagem" style="display: none">
+
+        <i style="color:green">O total da compra ficou em <b id="total_compra" style="color: black"></b> 
+        e com peso total de <b id="total_peso" style="color: black"></b></i><br>
+
+        <i style="color: blue">Cada um dos 5 amigos terá de desembolsar <b id="custo_por_pessoa"></b> e 
+        teria que carregar <b id="peso_por_pessoa"></b> de peso</i><br>
+
+        <i style="color: blueviolet">Porém, os homens vão carregar <b id="peso_para_homem" style="color: blue"></b> de peso 
+        e as mulheres <b id="peso_para_mulher" style="color: red"></b></i><br>
+
+    </div>
+
+</body>
+</html>
+
+<script>
+    function calcular(){
+        
+        var custo_1 = unidades_1.value * item_1.value;
+        var custo_2 = unidades_2.value * item_2.value;
+        var custo_3 = unidades_3.value * item_3.value;
+        var custo_4 = unidades_4.value * item_4.value;
+        var custo_total = custo_1 + custo_2 + custo_3 + custo_4;
+        
+        var peso_1 = unidades_1.value * 50;
+        var peso_2 = unidades_2.value * 150;
+        var peso_3 = unidades_3.value * 30;
+        var peso_4 = unidades_4.value * 15;
+        var peso_total = (peso_1 + peso_2 + peso_3 + peso_4) / 1000;
+
+        total_compra.innerHTML = `R$${ custo_total.toFixed(2) }`;
+        total_peso.innerHTML = `${peso_total.toFixed(2)} Kg`;
+
+        custo_por_pessoa.innerHTML = `R$${ ( custo_total / 5).toFixed(2) }`;
+        peso_por_pessoa.innerHTML = `${ ( peso_total / 5 ).toFixed(2) } Kg`;
+
+        peso_para_homem.innerHTML = `${ (peso_total * 0.9).toFixed(2)} Kg`;
+        peso_para_mulher.innerHTML = `${ (peso_total * 0.1).toFixed(2)} Kg`;
+        
+        div_mensagem.style.display = 'block';
+
+        // alert(`O total da compra ficou em R$${custo_total.toFixed(2)} e com peso de ${peso_total.toFixed(2)}Kg`);
+        // alert(`Cada um dos amigos terá que desembolsar R$${(custo_total / 5).toFixed(2)} e carregar ${(peso_total / 5).toFixed(2)}Kg de peso`);
+    }
+</script>

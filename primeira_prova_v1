@@ -1,0 +1,72 @@
+
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Venda de cães</title>
+</head>
+<body>
+
+    Quanto é o custo mensal para manter um lulu? <input id="lulu" autofocus> <br> <br>
+    Quantos meses após o nascimento é póssivel vender um lulu femêa e um lulu macho ? <br> <br>
+    Femêa : <input id="meses_f_lulu"> Macho : <input id="meses_m_lulu"> <br> <br>
+
+    Quanto é o custo mensal para manter um yorkshire? <input id="york"> <br> <br>
+    Quantos meses após o nascimento é póssivel vender um yorkshire femêa e um yorkshire macho ? <br> <br>
+    Femêa : <input id="meses_f_york"> Macho : <input id="meses_m_york"> <br> <br>
+
+    <button onclick="simular ()"> Simular lucro e perda </button>
+
+    <div id="div_mensagem" style="display: none;">
+        <ul>
+            
+            <li>Após <b id="ver_meses_m_lulu"></b>, você gastou <u id="gasto_meses_m_lulu"></u> com o <b style="color: blue">Lulu macho.</b> 
+                Vendeu por <u>R$2.000,00</u>, tendo um saldo de <u id="saldo_m_lulu"></u>
+            </li>
+            
+            <li>Após <b id="ver_meses_f_lulu"></b>, você gastou <u id="gasto_meses_f_lulu"></u> com o <b style="color:purple">Lulu femêa.</b> 
+                Vendeu por <u>R$4.000,00</u>, tendo um saldo de <u id="saldo_f_lulu"></u>
+            </li>
+            
+            <li>Após <b id="ver_meses_m_york"></b>, você gastou <u id="gasto_meses_m_york"></u> com o <b style="color: blue">Yorkshire macho.</b> 
+                Vendeu por <u>R$800,00</u>, tendo um saldo de <u id="saldo_m_york"></u>
+            </li>
+            
+            <li>Após <b id="ver_meses_f_york"></b>, você gastou <u id="gasto_meses_f_york"></u> com o <b style="color: purple">Yorkshire femêa.</b> 
+                Vendeu  por <u>R$1500,00</u>, tendo um saldo de <u id="saldo_f_york"></u>  
+            </li>
+
+        </ul>
+
+    </div>
+</body>
+</html>
+
+<script>
+    function simular(){
+       //bloco lulu macho 
+        ver_meses_m_lulu.innerHTML = `${meses_m_lulu.value} meses `;
+        gasto_meses_m_lulu.innerHTML = `R$${(meses_m_lulu.value * lulu.value).toFixed(2)}`;
+        saldo_m_lulu.innerHTML = `R$${(2000.00 - (meses_m_lulu.value * lulu.value)).toFixed(2)}`;
+       
+       //bloco lulu fêmea 
+        ver_meses_f_lulu.innerHTML = `${meses_f_lulu.value} meses `;
+        gasto_meses_f_lulu.innerHTML = `R$${(meses_f_lulu.value * lulu.value).toFixed(2)}`;
+        saldo_f_lulu.innerHTML = `R$${(4000.00 - (meses_f_lulu.value * lulu.value)).toFixed(2)}`;
+       
+       //bloco yorkshire macho 
+        ver_meses_m_york.innerHTML = `${meses_m_york.value} meses `;
+        gasto_meses_m_york.innerHTML = `R$${(meses_m_york.value * york.value).toFixed(2)}`;
+        saldo_m_york.innerHTML = `R$${(800.00 - (meses_m_york.value * york.value)).toFixed(2)}`;
+       
+       //bloco yorkshire fêmea
+        ver_meses_f_york.innerHTML = `${meses_f_york.value} meses `;
+        gasto_meses_f_york.innerHTML = `R$${(meses_f_york.value * york.value).toFixed(2)}`;
+        saldo_f_york.innerHTML = `R$${(1500.00 - (meses_f_york.value * york.value)).toFixed(2)}`;
+
+       
+        div_mensagem.style.display = 'block';
+    }
+</script>

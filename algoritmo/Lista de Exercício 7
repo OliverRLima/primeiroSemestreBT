@@ -1,0 +1,333 @@
+<!-- qualquer imagem presente no código provavelmente não vai funcionar -->
+<!-- Caso encontre algum erro não tenha receio de corrigir, agradeço -->
+
+
+<!-- Exercício 1 -->
+
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Estruturas de decisão</title>
+</head>
+<body>
+
+    Qual é a sua idade: <input id="idade"> <br>
+    
+    <button onclick="festejar()">Ir a festa</button>
+    <div id="divizinha"></div>
+
+</body>
+</html>
+
+<script>
+    function festejar () {
+        divizinha.innerHTML = '';
+        var valor_multas = Number(idade.value);
+        var mensagem = valor_multas < 18 ? "Pedir permissão pro responsável" : "#partiuFesta";
+        divizinha.innerHTML = `${mensagem}`;
+    }
+</script>
+
+<!-- Exercício 2 -->
+
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    Insira a sua média : <input id="media"> <br>
+    Insira a sua frequência : <input id="frequencia">
+    <button onclick="ver()">Ver resultado</button>
+    <div>
+        <b id="mensagenzinha"></b>
+    </div>
+</body>
+</html>
+
+<script>
+    function ver(){
+        mensagenzinha.innerHTML = '';
+        var valor_media = Number(media.value);
+        var valor_frequencia = Number(frequencia.value);
+        var mensagem = valor_media > 5 && valor_frequencia > 75 ? "Parabéns, aprovado(a)!" : "Tente outra vez ;)";
+
+        mensagenzinha.innerHTML = `${mensagem}`;
+    }
+</script>
+
+<!-- Exercício 3 -->
+
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    Insira o peso total em um elevador: <input id="peso_total" autofocus> <br>
+    <button onclick="ligar()">Ligar elevador</button>
+    <div id="divizinha"></div>
+</body>
+</html>
+
+<script>
+    function ligar () {
+        
+        var peso = Number(peso_total.value);
+        var mensagem = peso < 500 ? "Elevador vai se mover" : "Alguém precisa descer do elevador";
+
+        divizinha.innerHTML = `${mensagem}`;
+    
+    }
+</script>
+
+<!-- Exercício 4 -->
+
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    Insira a quantidade de homens e mulheres no elevador: <br>
+    <input id="homens" autofocus> <input id="mulheres"> 
+    <button onclick="ligar()">Ligar elevador</button>
+    <div id="divi" ></div>
+</body>
+</html>
+
+<script>
+    function ligar () {
+        var peso = (Number(homens.value) * 90 ) + (Number(mulheres.value) * 70);
+        var mensagem = peso < 500 ? `<div style="color: green">Elevador vai se mover, pois está com ${peso}Kg</div>` :
+        `<div style="color: red">Alguém precisa descer. Precisa perder ${(peso - 500).toFixed(2)}Kg para mover o elevador</div>`;
+
+        divi.innerHTML = `${mensagem}`;
+
+    }
+</script>
+
+<!-- Exercício 5 -->
+
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Conector lógico && (e)</title>
+</head>
+<body>
+    <h2>Conector lógico && (e)</h2>
+
+    Temperatura: <input id="temperatura"> <br>
+
+    <button onclick="ver()">Ver situação</button>
+    
+    <div id="divizinha"></div>
+
+</body>
+</html>
+
+<script>
+
+    function ver () {
+        var quentura = Number(temperatura.value);
+        var mensagem = quentura >= 21 && quentura <=24 ? 'Temperatura confortável :)' : 'Temperatura DESCONFORTÁVEL :(';
+        
+        divizinha.innerHTML = `${mensagem}`;
+    }
+</script>
+
+<!-- Exercício 6 -->
+
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Estruturas de decisão</title>
+</head>
+<body>
+
+    Qual é a sua idade: <input id="idade"> <br>
+    
+    <button onclick="festejar()">Ir a festa</button>
+    <div id="divizinha"></div>
+</body>
+</html>
+
+<script>
+    function festejar () {
+                
+        var valor_idade = Number(idade.value);
+        mensagem = valor_idade >= 18 ? "#partiuFesta" 
+        : valor_idade < 15 ? "Sem chance! Vai estudar!" : "Pedir permissão pro responsável<br>#partiuFesta" ;
+
+
+        divizinha.innerHTML = `${mensagem}`;
+
+    }
+</script>
+
+<!-- Exercício 7 -->
+
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    Qual o saldo da sua conta no banco: <input id="saldo"> 
+    <br>
+    
+    <button onclick="verificar()">Verificar finanças</button>
+    
+    <div id="divizinha">
+    </div>
+
+</body>
+</html>
+
+<script>
+    function verificar() {
+        divizinha.innerHTML = ``;
+        valor_saldo = Number(saldo.value);
+
+        var mensagem = valor_saldo > 0 ? `<div style="color: blue">Saldo positivo! : R$${valor_saldo.toFixed(2)}</div>`:
+        valor_saldo == 0 ? `<div style="color: black">Conta zerada</div>` :
+        valor_saldo < -1000 ? `<div style="color: red">Está devendo!<br>Igual ao Corinthians: No SERASA!</div>` 
+        : `<div style="color:red">Está devendo!</div>`;
+        
+        divizinha.innerHTML = `${mensagem}`;
+    }
+</script>
+
+<!-- Exercício 8 -->
+
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    Valor guardado: R$<b id="valor">0.00</b>
+    <div id="divi"></div>
+    <br>
+    <button onclick="guardar()">Guardar R$5,00</button>
+    <button onclick="gastar()">Gastar R$10,00</button>
+
+</body>
+</html>
+
+<script>
+    var cofrin = 0;
+    
+    function guardar() {
+        divi.innerHTML = ';'
+        cofrin += 5;
+        valor.innerHTML = cofrin;
+        
+        var mensagem = cofrin >= 100 ? `<div style=" color: blue;">Finanças OK!</div><div><b>#ostentacão</b></div>`
+        : cofrin < -20 ? `<div style=" color: red;">Finanças em perigo!</div><div>Quase um Corinthians!</div>`
+        : cofrin < 0 ? `<div style=" color: red;">Finanças em perigo!</div>`
+        : `<div style=" color: blue;">Finanças OK!</div>`; 
+         
+        divi.innerHTML = `${mensagem}`;
+
+    }     
+    
+    function gastar() {
+        divi.innerHTML = '';
+        cofrin -= 10;
+        valor.innerHTML = cofrin;
+        
+        var mensagem = cofrin < -20 ? `<div style=" color: red;">Finanças em perigo!</div><div>Quase um Corinthians!</div>`
+        : cofrin >= 100 ? `<div style=" color: blue;">Finanças OK!</div><div><b>#ostentacão</b></div>` 
+        : cofrin >= 0 ? `<div style=" color: blue;">Finanças OK!</div>`
+        : `<div style=" color: red;">Finanças em perigo!</div>`; 
+        
+        divi.innerHTML = `${mensagem}`;
+        
+    }
+
+</script>
+
+<!-- Exercício 9 -->
+
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    Qual o seu salário ? <input id="salario"> 
+    <button onclick="analisar()">Analisar salário</button>
+
+    <div id="divi">
+    </div>
+</body>
+</html>
+
+<script>
+    function analisar() { 
+        divi.innerHTML = '';
+        var valor_salario = Number(salario.value);
+        var mensagem = valor_salario < 2500 ? `<img src="./triste.png" alt="">` : `<img src="./feliz.png" alt="">`;
+
+        divi.innerHTML = `${mensagem}`;
+    }
+</script>
+
+<!-- Exercício 10 -->
+
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    Qual o seu salário ? <input id="salario"> 
+    <button onclick="analisar()">Analisar salário</button>
+
+    <div id="divi">
+    </div>
+</body>
+</html>
+
+<script>
+    function analisar() { 
+        divi.innerHTML = '';
+        var valor_salario = Number(salario.value);
+        var mensagem = valor_salario < 2500 ? `<img src="./triste.png" alt="">` 
+        : valor_salario > 7000 ? `<img src="./feliz.png" alt="">`
+        : `<img src="./neutra.jpg">`;
+
+        divi.innerHTML = `${mensagem}`;
+    }
+</script>
